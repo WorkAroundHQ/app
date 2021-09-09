@@ -1,0 +1,29 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4 {
+  font-family: 'Switzer', sans-serif;
+}
+
+h1 {
+  font-weight: 900;
+}
+
+h2 {
+  font-weight: 700;
+}
+
+h3, h4 {
+  font-weight: 600;
+}
+
+p, li, a {
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+}
+
+body {
+  margin: 0;
+}

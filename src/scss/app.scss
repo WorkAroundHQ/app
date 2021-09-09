@@ -1,0 +1,36 @@
+.app {
+  text-align: center;
+
+  .app-header {
+    background-color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: black;
+
+    .app-logo {
+      height: 40vmin;
+      pointer-events: none;
+    }
+
+    .app-link {
+      color: #61dafb;
+    }
+
+    .social-media {
+      a {
+        color: #008786;
+        font-size: calc(10px + 1.5vmin);
+        margin: 0 8px;
+        transition: all .2s ease-in-out;
+      }
+
+      a:hover {
+        color: #005756;
+      }
+    }
+  }
+}

@@ -1,36 +1,24 @@
 # WorkAround App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[![Netlify Status](https://api.netlify.com/api/v1/badges/d4dead3a-cb33-46f8-a1f2-6ad5c183aa99/deploy-status)](https://app.netlify.com/sites/app-workaround/deploys)
+[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?label=License&color=ffffff)](https://github.com/WorkAroundHQ/app/blob/main/LICENSE)
+[![WorkAroundHQ](https://img.shields.io/twitter/follow/workaroundhq?label=Follow)](https://twitter.com/workaroundhq)
 
 ## Available Scripts
 
 In the project directory, you can run:
+- `yarn start` - starts a development server
+- `yarn test` - starts the atumated tests
+- `yarn build` - creates a production ready build
 
-### `yarn start`
+## Feedback
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+If you have any feedback, please reach out to us [@WorkAroundHQ](https://twitter.com/workaroundhq)
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Authors
 
-### `yarn test`
+[@mrcgrhrdt](https://www.github.com/mrcgrhrdt)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## License
 
-### `yarn build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+[MIT](https://github.com/WorkAroundWorld/WorkAroundHQ/blob/main/LICENSE)

@@ -9,15 +9,15 @@
     align-items: center;
     justify-content: center;
     font-size: calc(10px + 2vmin);
-    color: black;
+    color: #252525;
 
     .app-logo {
       height: 32vmin;
       pointer-events: none;
     }
 
-    .app-link {
-      color: #61dafb;
+    p {
+      width: 90%;
     }
 
     a {

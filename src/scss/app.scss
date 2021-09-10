@@ -12,7 +12,7 @@
     color: black;
 
     .app-logo {
-      height: 40vmin;
+      height: 32vmin;
       pointer-events: none;
     }
 
@@ -20,16 +20,21 @@
       color: #61dafb;
     }
 
+    a {
+      color: #008786;
+      transition: all .2s ease-in-out;
+
+      &:hover {
+        color: #005756;
+      }
+    }
+
     .social-media {
+      margin-top: 16px;
+
       a {
-        color: #008786;
         font-size: calc(10px + 1.5vmin);
         margin: 0 8px;
-        transition: all .2s ease-in-out;
-
-        &:hover {
-          color: #005756;
-        }
       }
     }
   }

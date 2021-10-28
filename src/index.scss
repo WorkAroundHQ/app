@@ -1,3 +1,5 @@
+@import './scss/fonts.scss';
+
 * {
   box-sizing: border-box;
   -webkit-font-smoothing: antialiased;
@@ -5,28 +7,26 @@
   outline: none;
 }
 
-h1, h2, h3, h4 {
-  font-family: 'Switzer', sans-serif;
-  color: #252525;
-}
-
 h1 {
-  font-weight: 900;
+  @include heading1;
 }
 
 h2 {
-  font-weight: 700;
+  @include heading2;
 }
 
-h3, h4 {
-  font-weight: 600;
+h3, h4, h5 {
+  @include heading3;
+}
+
+h6 {
+  @include bigbody;
+  margin: 0;
 }
 
 p, li, a {
-  font-family: 'Satoshi', sans-serif;
-  font-weight: 400;
-  margin: 0 0 8px 0;
-  color: #222222;
+  @include body;
+  margin: 0;
 }
 
 body {

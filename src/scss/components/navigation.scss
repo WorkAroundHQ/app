@@ -1,6 +1,6 @@
-@import './colors.scss';
-@import './fonts.scss';
-@import './brpoints.scss';
+@import '../util/colors.scss';
+@import '../util/fonts.scss';
+@import '../util/brpoints.scss';
 
 nav.sidebar{
 	display: flex;
@@ -28,7 +28,8 @@ nav.sidebar{
 			}
 		}
 
-		div.sidebar-pages > div.pagelink {
+		div.sidebar-pages > a.react-link {
+			display: block;
 			&:not(:last-child) {
 				margin-bottom: 24px;
 			}

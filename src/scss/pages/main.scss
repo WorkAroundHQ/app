@@ -2,4 +2,8 @@ div.main-container {
   width: 100vw;
   height: 100vh;
   display: flex;
+
+  main.content {
+    width: 100%;
+  }
 }

@@ -1,0 +1,9 @@
+@mixin for-size($size) {
+  @if $size == tablet-portrait-up {
+    @media (min-width: 37.5rem) { @content; }
+  } @else if $size == tablet-landscape-up {
+    @media (min-width: 56.25rem) { @content; }
+  } @else if $size == desktop-up {
+    @media (min-width: 75rem) { @content; }
+  }
+}

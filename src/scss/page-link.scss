@@ -1,0 +1,40 @@
+@import './colors.scss';
+@import './fonts.scss';
+
+div.pagelink {
+	width: 64px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	border-radius: 2px;
+	transition: all .2s ease-in-out;
+	
+	&:hover {
+		background: $gray-100;
+		border-radius: 12px;
+		cursor: pointer;
+	}
+
+	&:active {
+		ion-icon {
+			color: $primary-500;
+		}
+	
+		p.pagelink-text {
+			color: $primary-500;
+		}
+	}
+
+	ion-icon {
+		width: 32px;
+		height: 32px;
+		margin: 8px 0 2px;
+		color: $gray-700;
+	}
+
+	p.pagelink-text {
+		@include body;
+		color: $gray-700;
+		margin-bottom: 4px;
+	}
+}

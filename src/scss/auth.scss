@@ -1,10 +1,17 @@
+@import './colors.scss';
+@import './fonts.scss';
+
 div.auth-container {
-	height: calc(80vh);
+	height: fit-content;
 	width: 620px;
 	min-width: 420px;
 	background-color: #F8F8F8;
 	border-radius: 16px;
 	padding: 16px;
+
+	h1 {
+		@include heading1;
+	}
 
 	div.auth-form {
 		min-height: 168px;
@@ -20,16 +27,21 @@ div.auth-container {
 			background-color: white;
 			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 			border-radius: 6px;
-			font-family: Satoshi;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 18px;
-			line-height: 24px;
-			color: #737373;
+			@include bigbody;
+			color: $gray-500;
 			border: none;
+			transition: box-shadow .2s ease-in-out;
 
 			&:not(:last-child) {
 				margin-bottom: 24px;
+			}
+
+			&:hover {
+				box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+			}
+
+			&:focus-visible {
+				box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 			}
 		}
 	}
@@ -46,18 +58,29 @@ div.auth-container {
 			background-color: white;
 			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
 			border-radius: 6px;
-			font-family: Satoshi;
-			font-style: normal;
-			font-weight: normal;
-			font-size: 18px;
-			line-height: 24px;
-			color: #222222;
+			@include body;
+			color: $gray-900;
 			border: none;
+			border-color: $white;
+			transition: all .2s ease-in-out;
 
 			&.primary {
-				background-color: #8423FF;
-				color: #FFFFFF;
+				background-color: $primary-500;
+				color: $white;
+				@include bigbody;
 				margin-bottom: 16px;
+
+				&:hover {
+					background-color: $primary-700;
+				}
+			}
+
+			&:hover {
+				box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+			}
+
+			&:focus-visible {
+				box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 			}
 		}
 	}

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { supabase } from '../supabaseClient'
 import Input from '../components/Input'
-import '../scss/auth.scss'
+import '../scss/pages/auth.scss'
 
 const Auth = () => {
 	const [loading, setLoading] = useState(false)

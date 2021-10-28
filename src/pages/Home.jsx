@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react'
-import { supabase } from '../supabaseClient'
+import { useEffect } from 'react'
+// import { supabase } from '../supabaseClient'
 import Header from '../components/Header'
 import Content from '../components/Content'
 import Footer from '../components/Footer'
@@ -10,7 +10,7 @@ const Home = ({ session }) => {
   useEffect(() => {
     console.log(session)
   }, [session])
-  // supabase.auth.signOut()
+
 	return (
     <div className="app">
       <Header />

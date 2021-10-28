@@ -49,27 +49,33 @@ const Auth = () => {
     }
   }
 
+  const handlePrimaryButtonClick = async (e) => {
+      e.preventDefault()
+      if (signUpMode) {
+        handleSignup(email, password, repeatedPassword)
+      } else {
+        handleLogin(email, password)
+      }
+  }
+
+  const handleEnterPress = (e) => {
+    if (e.key === 'Enter') handlePrimaryButtonClick(e)
+  }
+
 	return (
 		<div className='auth-container'>
 			<h1 className='auth-header'>{signUpMode ? 'Sign up' : 'Login'}</h1>
 			<div className='auth-form'>
-          <Input type='email' placeholder='Your email' onChange={(e) => setEmail(e.target.value)} />
-          <Input type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} />
+          <Input type='email' placeholder='Your email' onChange={(e) => setEmail(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
+          <Input type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
           {signUpMode ? 
-						<Input type='password' placeholder='Repeat Password' onChange={(e) => setRepeatedPassword(e.target.value)} /> : ''
+						<Input type='password' placeholder='Repeat Password' onChange={(e) => setRepeatedPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} /> : ''
 					}
         </div>
 				<div className='auth-buttons'>
           <button className='auth-button primary'
             disabled={loading}
-            onClick={(e) => {
-              e.preventDefault()
-              if (signUpMode) {
-                handleSignup(email, password, repeatedPassword)
-              } else {
-                handleLogin(email, password)
-              }
-            }}
+            onClick={e => handlePrimaryButtonClick(e)}
           >
             {loading ? 'Loading' : signUpMode ? 'Signup' : 'Login'}
           </button>

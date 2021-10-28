@@ -1,0 +1,41 @@
+@mixin heading1 {
+	font-family: Switzer, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: bold;
+	font-size: 2.25rem; // 36px
+}
+
+@mixin heading2 {
+	font-family: Switzer, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.5rem; // 24px
+}
+
+@mixin heading3 {
+	font-family: Switzer, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 600;
+	font-size: 1.125rem; // 18px
+}
+
+@mixin bigbody {
+	font-family: Satoshi, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 1.125rem; // 18px
+}
+
+@mixin body {
+	font-family: Satoshi, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 0.875rem; // 14px
+}
+
+@mixin capture {
+	font-family: Satoshi, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: normal;
+	font-size: 0.75rem; // 12px
+}

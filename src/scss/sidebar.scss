@@ -1,0 +1,37 @@
+@import './colors.scss';
+@import './fonts.scss';
+@import './brpoints.scss';
+
+nav.sidebar{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	background: $gray-90;
+	border-radius: 16px;
+	padding: 12px;
+
+	@include for-size(tablet-landscape-up) {
+		min-height: 550px;
+		margin: 24px 44px 24px 24px;
+	}
+
+	div.sidebar-top {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+
+		@include for-size(tablet-landscape-up) {
+			div.sidebar-logo {
+				margin: 12px 0 96px;
+			}
+		}
+
+		div.sidebar-pages > div.pagelink {
+			&:not(:last-child) {
+				margin-bottom: 24px;
+			}
+		}
+	}
+}

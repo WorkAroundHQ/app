@@ -22,14 +22,14 @@
 @mixin bigbody {
 	font-family: Satoshi, Helvetica, sans-serif;
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 500;
 	font-size: 1.125rem; // 18px
 }
 
 @mixin body {
 	font-family: Satoshi, Helvetica, sans-serif;
 	font-style: normal;
-	font-weight: normal;
+	font-weight: 500;
 	font-size: 0.875rem; // 14px
 }
 

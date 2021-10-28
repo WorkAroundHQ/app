@@ -1,23 +1,21 @@
 import { useEffect } from 'react'
 // import { supabase } from '../supabaseClient'
-import Header from '../components/Header'
+import Sidenav from "../components/Sidenav"
 import Content from '../components/Content'
-import Footer from '../components/Footer'
-import '../scss/home.scss'
+import '../scss/main.scss'
 
-const Home = ({ session }) => {
+const Main = ({ session }) => {
   
   useEffect(() => {
     console.log(session)
   }, [session])
 
 	return (
-    <div className="app">
-      <Header />
+    <div className='main-container'>
+      <Sidenav /> 
       <Content />
-      <Footer />
     </div>
 	)
 }
 
-export default Home
+export default Main

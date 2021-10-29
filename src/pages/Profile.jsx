@@ -3,11 +3,12 @@ import { supabase } from '../supabaseClient'
 import FormElement from "../components/FormElement"
 import Switch from "../components/Switch"
 import Button from "../components/Button"
+import Avatar from "../components/Avatar"
 import '../scss/pages/profile.scss'
 
 const Profile = ({ session }) => {
 	const [loading, setLoading] = useState(true)
-	const [editing, setEditing] = useState(true)
+	const [editing, setEditing] = useState(false)
 
   const [name, setName] = useState('')
   const [avatar_url, setAvatarUrl] = useState('')
@@ -97,19 +98,24 @@ const Profile = ({ session }) => {
 
 	return (
 		<section id='profile'>
-			<div className='pprofile-header'>
-				<h1>Profile</h1>
-				<Button text={editing ? 'Save' : loading ? 'Loading' : 'Edit'} mode='' onClick={() => handleEditing()} />
+			<h1>Profile</h1>
+			<Button text={editing ? 'Save' : loading ? 'Loading' : 'Edit'} mode='' onClick={() => handleEditing()} />
+			<Avatar url={avatar_url} size={150}
+				onUpload={(url) => {
+					setAvatarUrl(url)
+				}}
+			/>
+			<div className='profile-form'>
+				<FormElement className='text' id='email' type='email' label='Email' value={session.user.email} disabled={true} />
+				<FormElement className='text' id='name' type='text' label='Name' value={name} handleChange={setName} disabled={!editing} />
+				<FormElement className='text' id='job' type='text' label='Job Description' value={job} handleChange={setJob} disabled={!editing} />
+				<FormElement className='text' id='twitter' type='text' label='Twitter' value={twitter} handleChange={setTwitter} disabled={!editing} />
+				<FormElement className='text' id='instagram' type='text' label='Instagram' value={instagram} handleChange={setInstagram} disabled={!editing} />
+				<FormElement className='text' id='linkedin' type='text' label='LinkedIn' value={linkedin} handleChange={setLinkedin} disabled={!editing} />
+				<FormElement className='text' id='github' type='text' label='GitHub' value={github} handleChange={setGithub} disabled={!editing} />
+				<Switch className='checkbox' id='open_for_work' label='Open for work?' value={openForWork} handleChange={setOpenForWork} disabled={!editing} />
+				<FormElement className='text' id='bio' type='text' label='About me' value={bio} handleChange={setBio} disabled={!editing} />
 			</div>
-			<FormElement className='text' id='email' type='email' label='Email' value={session.user.email} disabled={true} />
-			<FormElement className='text' id='name' type='text' label='Name' value={name} handleChange={setName} disabled={!editing} />
-			<FormElement className='text' id='job' type='text' label='Job Description' value={job} handleChange={setJob} disabled={!editing} />
-			<FormElement className='text' id='twitter' type='text' label='Twitter' value={twitter} handleChange={setTwitter} disabled={!editing} />
-			<FormElement className='text' id='instagram' type='text' label='Instagram' value={instagram} handleChange={setInstagram} disabled={!editing} />
-			<FormElement className='text' id='linkedin' type='text' label='LinkedIn' value={linkedin} handleChange={setLinkedin} disabled={!editing} />
-			<FormElement className='text' id='github' type='text' label='GitHub' value={github} handleChange={setGithub} disabled={!editing} />
-			<Switch className='checkbox' id='open_for_work' label='Open for work?' value={openForWork} handleChange={setOpenForWork} disabled={!editing} />
-			<FormElement className='text' id='bio' type='text' label='About me' value={bio} handleChange={setBio} disabled={!editing} />
 			<Button text='Sign out' mode='attention' onClick={() => supabase.auth.signOut()} />
 		</section>
 	)

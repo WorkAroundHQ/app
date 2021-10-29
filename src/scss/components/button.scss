@@ -1,9 +1,10 @@
 @import '../util/colors.scss';
 @import '../util/fonts.scss';
 
-button.button {
+.button {
 	@include button;
-	// height: 34px;
+	height: fit-content;
+	width: fit-content;
 	padding: 6px 16px;
 	background-color: $white;
 	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
@@ -21,7 +22,6 @@ button.button {
 	&.primary {
 		background-color: $primary-500;
 		color: $white;
-		margin-bottom: 16px;
 
 		&:hover {
 			background-color: $primary-700;
@@ -31,7 +31,6 @@ button.button {
 	&.attention {
 		background-color: $white;
 		color: $error-500;
-		margin-bottom: 16px;
 
 		&:hover {
 			background-color: $error-500;
@@ -42,7 +41,6 @@ button.button {
 	&.success {
 		background-color: $white;
 		color: $success-500;
-		margin-bottom: 16px;
 
 		&:hover {
 			background-color: $success-500;

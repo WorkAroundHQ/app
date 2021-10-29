@@ -1,8 +1,42 @@
 @import '../util/colors.scss';
 
 section#profile {
-
+	display: grid;
+	margin: 24px 24px 24px 0;
+	column-gap: 10px;
+  row-gap: 15px;
+	align-items: center;
+	grid-template-columns: repeat(3, 1fr) 150px 1fr;
+	grid-template-rows: 75px repeat(3, auto) 75px;
+	grid-template-areas:
+		"heading . . edit ."
+		"form form form avatar ."
+		"form form form avatar ."
+		"form form form . ."
+		"signout . . . .";
+	
 	h1 {
-		color: $primary-500
+		grid-area: heading;
+		height: fit-content;
+		color: $primary-500;
+		margin: 0;
+	}
+
+	div.profile-avatar {
+		grid-area: avatar;
+	}
+
+	button.button {
+		grid-area: edit;
+		justify-self: flex-end;
+	}
+
+	div.profile-form {
+		grid-area: form;
+	}
+
+	button.button.attention {
+		grid-area: signout;
+		justify-self: flex-start;
 	}
 }

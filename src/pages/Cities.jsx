@@ -1,7 +1,7 @@
 const Cities = () => {
 	return (
 		<div>
-			<h1>Account</h1>
+			<h1>Cities</h1>
 		</div>
 	)
 }

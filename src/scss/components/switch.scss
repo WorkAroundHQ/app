@@ -1,0 +1,44 @@
+@import '../util/colors.scss';
+
+.switch {
+  width: 34px;
+  height: 20px;
+  position: relative;
+  display: inline-block;
+
+	& > input {
+		display: none;
+
+		&:checked + .slider {
+			background-color: $primary-500;
+		}
+
+		&:checked + .slider:before {
+			transform: translateX(14px);
+		}
+	}
+
+	.slider {
+		position: absolute;
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		cursor: pointer;
+		background-color: $gray-400;
+		border-radius: 10px;
+		transition: .4s;
+
+		&:before {
+			width: 16px;
+			height: 16px;
+			content: "";
+			position: absolute;
+			bottom: 2px;
+			left: 2px;
+			background-color: $gray-90;
+			border-radius: 50%;
+			transition: .4s;
+		}
+	}
+}

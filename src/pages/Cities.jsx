@@ -1,8 +1,8 @@
 const Cities = () => {
 	return (
-		<div>
+		<section id='cities'>
 			<h1>Cities</h1>
-		</div>
+		</section>
 	)
 }
 

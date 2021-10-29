@@ -2,21 +2,22 @@ import { useState, useEffect } from 'react'
 import { supabase } from '../supabaseClient'
 import FormElement from "../components/FormElement"
 import Switch from "../components/Switch"
+import Button from "../components/Button"
 import '../scss/pages/profile.scss'
 
 const Profile = ({ session }) => {
 	const [loading, setLoading] = useState(true)
 	const [editing, setEditing] = useState(true)
 
-  const [name, setName] = useState(null)
-  const [avatar_url, setAvatarUrl] = useState(null)
-  const [job, setJob] = useState(null)
-	const [bio, setBio] = useState(null)
-	const [twitter, setTwitter] = useState(null)
-	const [instagram, setInstagram] = useState(null)
-	const [linkedin, setLinkedin] = useState(null)
-	const [github, setGithub] = useState(null)
-	const [openForWork, setOpenForWork] = useState(null)
+  const [name, setName] = useState('')
+  const [avatar_url, setAvatarUrl] = useState('')
+  const [job, setJob] = useState('')
+	const [bio, setBio] = useState('')
+	const [twitter, setTwitter] = useState('')
+	const [instagram, setInstagram] = useState('')
+	const [linkedin, setLinkedin] = useState('')
+	const [github, setGithub] = useState('')
+	const [openForWork, setOpenForWork] = useState(false)
 
 	useEffect(() => {
     getProfile()
@@ -54,9 +55,52 @@ const Profile = ({ session }) => {
     }
 	}
 
+	const updateProfile = async () => {
+		console.log('Profile Updated!')
+		try {
+      setLoading(true)
+      const user = supabase.auth.user()
+      const updates = {
+        id: user.id,
+        name,
+				avatar_url,
+        job,
+        bio,
+				twitter,
+				instagram,
+				linkedin,
+				github,
+				open_for_work: openForWork,
+        updated_at: new Date(),
+      }
+
+      let { error } = await supabase.from('users').upsert(updates, {
+        returning: 'minimal',
+      })
+
+      if (error) {
+        throw error
+      }
+    } catch (error) {
+      alert(error.message)
+    } finally {
+      setLoading(false)
+    }
+	}
+
+	const handleEditing = () => {
+		if (editing) {
+			updateProfile()
+		}
+		setEditing(!editing)
+	}
+
 	return (
 		<section id='profile'>
-			<h1>Profile</h1>
+			<div className='pprofile-header'>
+				<h1>Profile</h1>
+				<Button text={editing ? 'Save' : loading ? 'Loading' : 'Edit'} mode='' onClick={() => handleEditing()} />
+			</div>
 			<FormElement className='text' id='email' type='email' label='Email' value={session.user.email} disabled={true} />
 			<FormElement className='text' id='name' type='text' label='Name' value={name} handleChange={setName} disabled={!editing} />
 			<FormElement className='text' id='job' type='text' label='Job Description' value={job} handleChange={setJob} disabled={!editing} />
@@ -65,10 +109,8 @@ const Profile = ({ session }) => {
 			<FormElement className='text' id='linkedin' type='text' label='LinkedIn' value={linkedin} handleChange={setLinkedin} disabled={!editing} />
 			<FormElement className='text' id='github' type='text' label='GitHub' value={github} handleChange={setGithub} disabled={!editing} />
 			<Switch className='checkbox' id='open_for_work' label='Open for work?' value={openForWork} handleChange={setOpenForWork} disabled={!editing} />
-			<FormElement className='multiline-text' id='bio' type='text' label='About me' value={bio} handleChange={setBio} disabled={!editing} />
-			<button className="button block" onClick={() => supabase.auth.signOut()}>
-          Sign Out
-        </button>
+			<FormElement className='text' id='bio' type='text' label='About me' value={bio} handleChange={setBio} disabled={!editing} />
+			<Button text='Sign out' mode='attention' onClick={() => supabase.auth.signOut()} />
 		</section>
 	)
 }

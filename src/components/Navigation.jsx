@@ -1,9 +1,17 @@
-// import { useState } from 'react'
+import { useState, useEffect } from 'react'
+import { useLocation } from 'react-router-dom'
 import Logo from './Logo'
 import PageLink from './PageLink'
 import '../scss/components/navigation.scss'
 
 const Navigation = () => {
+	const [currentPage, setCurrentPage] = useState('/')
+	const location = useLocation()
+	
+	useEffect(() => {
+		setCurrentPage(location.pathname)
+  }, [location.pathname])
+
 	return (
 		<nav className='sidebar'>
 			<div className='sidebar-top'>
@@ -11,19 +19,19 @@ const Navigation = () => {
 				<div className="sidebar-pages">
 					<PageLink page={{
 						href: '/',
-						active: false,
+						currentPage: currentPage,
 						image: 'home',
 						text: 'Home'
 					}}/>
 					<PageLink page={{
 						href: '/cities',
-						active: false,
+						currentPage: currentPage,
 						image: 'globe-outline',
 						text: 'Cities'
 					}}/>
 					<PageLink page={{
 						href: '/articles',
-						active: false,
+						currentPage: currentPage,
 						image: 'newspaper',
 						text: 'Articles'
 					}}/>
@@ -32,7 +40,7 @@ const Navigation = () => {
 			<div className="sidebar-account">
 			<PageLink page={{
 						href: '/account',
-						active: false,
+						currentPage: currentPage,
 						image: 'person-circle',
 						text: 'Account'
 					}}/>

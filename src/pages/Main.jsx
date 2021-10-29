@@ -7,7 +7,7 @@ import Articles from '../pages/Articles'
 import Account from '../pages/Account'
 import '../scss/pages/main.scss'
 
-const Main = ({ session }) => {  
+const Main = ({ session }) => {
   useEffect(() => {
     console.log(session)
   }, [session])

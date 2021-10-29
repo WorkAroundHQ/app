@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import { supabase } from '../supabaseClient'
 import '../scss/components/avatar.scss'
 
-const Avatar = ({ url, size, onUpload }) => {
+const Avatar = ({ url, size, onUpload, editing }) => {
 	const [avatarUrl, setAvatarUrl] = useState(null)
   const [uploading, setUploading] = useState(false)
 
@@ -66,7 +66,7 @@ const Avatar = ({ url, size, onUpload }) => {
           type="file"
           accept="image/*"
           onChange={uploadAvatar}
-          disabled={uploading}
+          disabled={uploading || !editing}
         />
       </div>
     </div>

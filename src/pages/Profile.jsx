@@ -99,8 +99,8 @@ const Profile = ({ session }) => {
 	return (
 		<section id='profile'>
 			<h1>Profile</h1>
-			<Button text={editing ? 'Save' : loading ? 'Loading' : 'Edit'} mode='' onClick={() => handleEditing()} />
-			<Avatar url={avatar_url} size={150}
+			<Button text={editing ? 'Save' : loading ? 'Loading' : 'Edit'} mode='primary' onClick={() => handleEditing()} />
+			<Avatar url={avatar_url} size={150} editing={editing}
 				onUpload={(url) => {
 					setAvatarUrl(url)
 				}}

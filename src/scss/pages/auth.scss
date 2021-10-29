@@ -9,9 +9,12 @@ div.auth-container {
 	background-color: #F8F8F8;
 	border-radius: 16px;
 	padding: 16px;
+	margin: 0 auto;
 
 	h1 {
 		@include heading1;
+		text-align: center;
+		color: $gray-700;
 	}
 
 	div.auth-form {

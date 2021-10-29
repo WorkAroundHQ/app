@@ -1,5 +1,6 @@
 @import '../util/colors.scss';
 @import '../util/fonts.scss';
+@import '../components/input.scss';
 
 div.auth-container {
 	height: fit-content;
@@ -21,27 +22,15 @@ div.auth-container {
 		align-items: center;
 
 		input.auth-input {
+			@include input;
+			@include bigbody;
 			width: 300px;
 			height: 40px;
 			padding: 8px;
-			background-color: white;
-			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-			border-radius: 6px;
-			@include bigbody;
 			color: $gray-500;
-			border: none;
-			transition: box-shadow .2s ease-in-out;
 
 			&:not(:last-child) {
 				margin-bottom: 24px;
-			}
-
-			&:hover {
-				box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-			}
-
-			&:focus-visible {
-				box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 			}
 		}
 	}

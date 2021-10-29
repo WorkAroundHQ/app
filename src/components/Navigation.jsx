@@ -39,10 +39,10 @@ const Navigation = () => {
 			</div>
 			<div className="sidebar-account">
 			<PageLink page={{
-						href: '/account',
+						href: '/profile',
 						currentPage: currentPage,
 						image: 'person-circle',
-						text: 'Account'
+						text: 'Profile'
 					}}/>
 			</div>
 		</nav>

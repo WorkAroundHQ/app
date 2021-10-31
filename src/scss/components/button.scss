@@ -1,0 +1,59 @@
+@import '../util/colors.scss';
+@import '../util/fonts.scss';
+
+.button {
+	@include button;
+	height: fit-content;
+	width: fit-content;
+	padding: 6px 16px;
+	background-color: $white;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+	border-radius: 6px;
+	color: $gray-700;
+	border: none; 
+	user-select: none;
+	transition: all .2s ease-in-out;
+
+	&:hover {
+		background-color: $gray-700;
+		color: $white;
+		box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+	}
+
+	&.primary {
+		background-color: $primary-500;
+		color: $white;
+
+		&:hover {
+			background-color: $primary-700;
+		}
+	}
+
+	&.attention {
+		background-color: $white;
+		color: $error-500;
+
+		&:hover {
+			background-color: $error-500;
+			color: $white;
+		}
+	}
+
+	&.success {
+		background-color: $white;
+		color: $success-500;
+
+		&:hover {
+			background-color: $success-500;
+			color: $white;
+		}
+	}
+
+	&:active {
+		filter: brightness(.7);
+	}
+
+	&:focus-visible {
+		box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+	}
+}

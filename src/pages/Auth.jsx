@@ -1,6 +1,8 @@
 import { useState } from 'react'
 import { supabase } from '../supabaseClient'
+import Logo from '../components/Logo'
 import Input from '../components/Input'
+import Button from "../components/Button"
 import '../scss/pages/auth.scss'
 
 const Auth = () => {
@@ -63,32 +65,34 @@ const Auth = () => {
   }
 
 	return (
-		<div className='auth-container'>
-			<h1 className='auth-header'>{signUpMode ? 'Sign up' : 'Login'}</h1>
-			<div className='auth-form'>
-          <Input type='email' placeholder='Your email' onChange={(e) => setEmail(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
-          <Input type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
-          {signUpMode ? 
-						<Input type='password' placeholder='Repeat Password' onChange={(e) => setRepeatedPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} /> : ''
-					}
-        </div>
-				<div className='auth-buttons'>
-          <button className='auth-button primary'
-            disabled={loading}
-            onClick={e => handlePrimaryButtonClick(e)}
-          >
-            {loading ? 'Loading' : signUpMode ? 'Signup' : 'Login'}
-          </button>
-          <button className='auth-button'
-            onClick={(e) => {
+    <div className='auth'>
+      <div className='auth-container'>
+      <div className="auth-body">
+      <div className="auth-header">
+        <Logo width='42' height='40' color='#8423FF' />
+        <h1 className='auth-heading'>{signUpMode ? 'Sign up' : 'Login'}</h1>
+      </div>
+      <div className="auth-form">
+        <div className='auth-inputs'>
+            <Input type='email' placeholder='Your email' onChange={(e) => setEmail(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
+            <Input type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
+            {signUpMode ? 
+              <Input type='password' placeholder='Repeat Password' onChange={(e) => setRepeatedPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} /> : ''
+            }
+          </div>
+          <Button text={loading ? 'Loading' : signUpMode ? 'Sign Up' : 'Login'} mode='primary' disabled={loading} onClick={e => handlePrimaryButtonClick(e)} />
+      </div>
+      </div>
+        <div className="auth-footer">
+          <p>{signUpMode ? 'Already have an account? Login ' : 'Don\'t have an account? Sign up '}
+            <button onClick={(e) => {
               e.preventDefault()
               setAuthMode(!signUpMode)
-            }}
-          >
-            {signUpMode ? 'Already have an account? Login here' : 'Don\'t have an account? Sign up here'}
-          </button>
+            }}>here</button>
+          </p>
         </div>
-		</div>
+      </div>
+    </div>
 	)
 }
 

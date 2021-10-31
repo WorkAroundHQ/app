@@ -1,86 +1,87 @@
 @import '../util/colors.scss';
 @import '../util/fonts.scss';
+@import '../components/input.scss';
+
+div.auth {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	min-height: 580px;
+	width: 100vw;
+	height: 100vh;
+}
 
 div.auth-container {
-	height: fit-content;
-	width: 620px;
 	min-width: 420px;
+	width: 620px;
+	min-height: 522px;
+	height: 90vh;
+	max-height: 650px;
 	background-color: #F8F8F8;
 	border-radius: 16px;
-	padding: 16px;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 
-	h1 {
-		@include heading1;
+	div.auth-header {
+
+		div.sidebar-logo {
+			text-align: center;
+		}
+	
+		h1 {
+			@include heading1;
+			text-align: center;
+			color: $gray-700;
+			margin: 32px 0 48px;
+		}
 	}
 
 	div.auth-form {
-		min-height: 168px;
-		margin-bottom: 56px;
 		display: flex;
 		flex-direction: column;
 		align-items: center;
 
-		input.auth-input {
-			width: 300px;
-			height: 40px;
-			padding: 8px;
-			background-color: white;
-			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-			border-radius: 6px;
-			@include bigbody;
-			color: $gray-500;
-			border: none;
-			transition: box-shadow .2s ease-in-out;
-
-			&:not(:last-child) {
-				margin-bottom: 24px;
-			}
-
-			&:hover {
-				box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-			}
-
-			&:focus-visible {
-				box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+		div.auth-inputs {
+			min-height: 168px;
+			margin-bottom: 48px;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+	
+			input.auth-input {
+				@include input;
+				@include bigbody;
+				width: 300px;
+				height: 40px;
+				padding: 8px;
+				color: $gray-500;
+	
+				&:not(:last-child) {
+					margin-bottom: 24px;
+				}
 			}
 		}
 	}
 
-	div.auth-buttons {
-		display: flex;
-		flex-direction: column;
-		align-items: center;
+	div.auth-footer {
+		p {
+			text-align: center;
 
-		button.auth-button {
-			height: 40px;
-			width: fit-content;
-			padding: 8px 24px;
-			background-color: white;
-			box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
-			border-radius: 6px;
-			@include body;
-			color: $gray-900;
-			border: none;
-			border-color: $white;
-			transition: all .2s ease-in-out;
-
-			&.primary {
-				background-color: $primary-500;
-				color: $white;
-				@include bigbody;
-				margin-bottom: 16px;
+			button {
+				@include body;
+				color: $primary-500;
+				text-decoration: underline;
+				cursor: pointer;
+				padding: 0 0 0 2px;
+				background-color: transparent;
+				border: none;
+				transition: color .2s ease-in-out;
 
 				&:hover {
-					background-color: $primary-700;
+					color: $primary-700;
 				}
-			}
-
-			&:hover {
-				box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
-			}
-
-			&:focus-visible {
-				box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
 			}
 		}
 	}

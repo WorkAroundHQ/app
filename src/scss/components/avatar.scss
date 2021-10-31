@@ -1,0 +1,25 @@
+@import '../util/colors.scss';
+@import '../components/button.scss';
+
+div.profile-avatar {
+	.avatar {
+		border-radius: 16px;
+		object-fit: cover;
+
+		&.no-image {
+			background-color: $gray-100;
+		}
+	}
+
+	div.button {
+		margin: 16px auto 0;
+
+		& > label {
+			@include button;
+		}
+
+		& > input {
+			display: none;
+		}
+	}
+}

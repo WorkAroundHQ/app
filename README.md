@@ -28,7 +28,7 @@ yarn
 
 ## Development
 
-1. Start development server:
+Start development server:
 
 ```zsh
 yarn start
@@ -36,7 +36,7 @@ yarn start
 
 ## Automated Testing
 
-1. Run automated tests:
+Run automated tests:
 
 ```zsh
 yarn test

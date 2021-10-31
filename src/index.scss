@@ -1,4 +1,5 @@
 @import './scss/util/fonts.scss';
+@import './scss/util/colors.scss';
 
 * {
   box-sizing: border-box;
@@ -9,23 +10,28 @@
 
 h1 {
   @include heading1;
+  color: $gray-700;
 }
 
 h2 {
   @include heading2;
+  color: $gray-700;
 }
 
 h3, h4, h5 {
   @include heading3;
+  color: $gray-700;
 }
 
 h6 {
   @include bigbody;
+  color: $gray-700;
   margin: 0;
 }
 
 p, li, a {
   @include body;
+  color: $gray-700;
   margin: 0;
 }
 

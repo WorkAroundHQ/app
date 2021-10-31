@@ -4,6 +4,7 @@
 div.profile-avatar {
 	.avatar {
 		border-radius: 16px;
+		object-fit: cover;
 
 		&.no-image {
 			background-color: $gray-100;

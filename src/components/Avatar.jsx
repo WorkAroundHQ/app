@@ -59,7 +59,7 @@ const Avatar = ({ url, size, onUpload, editing }) => {
       ) : (
         <div className="avatar no-image" style={{ height: size, width: size }} />
       )}
-      <div className='button'>
+      <div className='button' style={{visibility: `${editing ? 'visible' : 'hidden'}`}}>
         <label htmlFor="image">{uploading ? 'Uploading ...' : 'Upload'}</label>
         <input
           id="image"

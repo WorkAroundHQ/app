@@ -12,6 +12,7 @@ div.form-element {
 	
 	label {
 		@include body;
+		min-width: fit-content;
 		width: 124px;
 		color: $gray-500;
 
@@ -30,6 +31,7 @@ div.form-element {
 		}
 		
 		&.text {
+			min-width: fit-content;
 			width: 200px;
 		}
 	}

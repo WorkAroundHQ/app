@@ -4,12 +4,50 @@
 [![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?label=License&color=ffffff)](https://github.com/WorkAroundHQ/app/blob/main/LICENSE)
 [![WorkAroundHQ](https://img.shields.io/twitter/follow/workaroundhq?label=Follow)](https://twitter.com/workaroundhq)
 
-## Available Scripts
+The WorkAround application is a platform for digital nomads who call the world their home. With WorkAround, digital nomads can pick their next ideal destination and connect with the community there.
 
-In the project directory, you can run:
-- `yarn start` - starts a development server
-- `yarn test` - starts the atumated tests
-- `yarn build` - creates a production ready build
+## Installation
+
+1. Clone repository:
+
+```zsh
+git clone git@github.com:WorkAroundHQ/app.git
+```
+
+2. Change directory:
+
+```zsh
+cd app
+```
+
+3. Install packages:
+
+```zsh
+yarn
+```
+
+## Development
+
+1. Start development server:
+
+```zsh
+yarn start
+```
+
+## Automated Testing
+
+1. Run automated tests:
+
+```zsh
+yarn test
+```
+
+## Deployment
+
+The deployment process is simple:
+
+- Every push on `main` triggers a build on Netlify
+- Every open pull request with target `main`, creates a deploy preview on Netlify
 
 ## Feedback
 
@@ -22,3 +60,5 @@ If you have any feedback, please reach out to us [@WorkAroundHQ](https://twitter
 ## License
 
 [MIT](https://github.com/WorkAroundWorld/WorkAroundHQ/blob/main/LICENSE)
+
+Made wit ❤️ and ☕️

@@ -7,6 +7,7 @@ import Profile from './Profile'
 import '../scss/pages/main.scss'
 
 const Main = ({ session }) => {
+
 	return (
     <Router>
       <div className='main-container'>

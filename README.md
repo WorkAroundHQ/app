@@ -6,7 +6,7 @@
 
 The WorkAround application is a platform for digital nomads who call the world their home. With WorkAround, digital nomads can pick their next ideal destination and connect with the community there.
 
-## Installation
+## Run Locally
 
 1. Clone repository:
 
@@ -26,9 +26,7 @@ cd app
 yarn
 ```
 
-## Development
-
-Start development server:
+4. Start development server:
 
 ```zsh
 yarn start
@@ -48,6 +46,14 @@ The deployment process is simple:
 
 - Every push on `main` triggers a build on Netlify
 - Every open pull request with target `main`, creates a deploy preview on Netlify
+
+## Tech Stack
+
+Frontend: React, SCSS
+
+Backend: Supabase
+
+
 
 ## Feedback
 

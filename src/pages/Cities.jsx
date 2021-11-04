@@ -29,13 +29,15 @@ const Cities = () => {
 			console.log('Error downloading image: ', error.message)
 		}
 	}
-			
+
 	return (
 		<section id='cities'>
 			<h1>Cities</h1>
-			{cities.map((city) => (
-				<City city={city} key={city.name} />
-			))}
+			<div className='cities-list'>
+				{cities.map((city) => (
+					<City city={city} key={city.name} />
+				))}
+			</div>
 		</section>
 	)
 }

@@ -1,0 +1,15 @@
+@import '../util/brpoints.scss';
+
+div.cities-list {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 16px;
+
+	@include for-size(tablet-landscape-up) {
+		gap: 20px;
+	}
+
+	@include for-size(tablet-landscape-up) {
+		gap: 24px;
+	}
+}

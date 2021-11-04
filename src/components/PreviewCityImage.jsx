@@ -1,5 +1,4 @@
 const PreviewCityImage = ({ city, imageSources }) => {
-	console.log(imageSources)
 	return (
 	<picture>
 			<source type="image/webp" srcSet={imageSources.sWebp} />

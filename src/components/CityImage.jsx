@@ -1,5 +1,4 @@
 const CityImage = ({ city, imageSources }) => {
-	console.log(imageSources)
 	return (
 	<picture>
 			<source type="image/webp" media="(min-width: 56.25rem)" srcSet={imageSources.lWebp} />

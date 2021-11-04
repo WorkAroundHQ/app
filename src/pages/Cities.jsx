@@ -1,12 +1,12 @@
 import { useEffect, useState } from 'react'
 import { supabase } from '../supabaseClient'
-import CityImage from '../components/CityImage'
+import PreviewCityImage from '../components/PreviewCityImage'
+import '../scss/pages/cities.scss'
 
 const Cities = () => {
 	const cityFolder = 'europe/germany/berlin/'
 	const [imagePaths, setImagePaths] = useState([])
-	const [imageSources, setImageSources] = useState([])
-	const [imageUrl, setImageUrl] = useState(null)
+	const [imageSources, setImageSources] = useState({})
 
 	useEffect(() => {
 		console.log('city folder hook')
@@ -18,71 +18,50 @@ const Cities = () => {
     if (imagePaths) getSignedUrl(imagePaths)
   }, [imagePaths])
 
-	useEffect(() => {
-		console.log('image source hook')
-    if (imageSources) console.log(imageSources)
-  }, [imageSources])
-
-	const getImgKey = (imgName) => {
-		const imgSize = imgName.split('-')[0]
-		let imgType = imgName.split('.')[1]
-		imgType = imgType[0].toUpperCase() + imgType.substring(1)
-		return `${imgSize}${imgType}`
-	}
-
-	const getSignedUrl = async (paths) => {
-		let neww = []
-		for (const path of paths) {
-			try {
-				const { data, error } = await supabase.storage.from('city-images').createSignedUrl(path, 3600)
-				if (error) {
-					throw error
-				}
-				neww = [...neww, data.signedURL]
-				
-			} catch (error) {
-				console.log('Error getting signed url: ', error.message)
-			}
-		}
-		setImageSources(neww)
-  }
-
 	const getImagePaths = async (cityFolder) => {
 		try {
       const { data, error } = await supabase.storage.from('city-images').list(cityFolder)
       if (error) {
         throw error
       }
-
 			const imagePaths = data.map(img => {
 				return `${cityFolder}${img.name}`
 			})
-
-			// console.log(imagePaths)
       setImagePaths(imagePaths)
     } catch (error) {
       console.log('Error getting signed url: ', error.message)
     }
 	}
 
-	const getSignedImageSources = (cityFolder, image) => {
-		supabase.storage.from('city-images').createSignedUrl(`${cityFolder}${image.name}`, 3600)
-		.then((res) => {
-			try {
-				if (res.error) throw res.error
-				const imgKey = getImgKey(image.name)
-				return {[imgKey]: res.signedURL}
-			} catch (error) {
-				console.log('Error getting image paths: ', error.message)
-			}
-		})
+	const getImgKey = (path) => {
+		const fileName = path.split('/').at(-1)
+		const imgSize = fileName.split('-')[0]
+		let imgType = fileName.split('.')[1]
+		imgType = imgType[0].toUpperCase() + imgType.substring(1)
+		return `${imgSize}${imgType}`
 	}
+
+	const getSignedUrl = async (paths) => {
+		let imgSources = {}
+		for (const path of paths) {
+			const fileName = getImgKey(path)
+			try {
+				const { data, error } = await supabase.storage.from('city-images').createSignedUrl(path, 3600)
+				if (error) {
+					throw error
+				}
+				imgSources = {...imgSources, [fileName]: data.signedURL}
+			} catch (error) {
+				console.log('Error getting signed url: ', error.message)
+			}
+		}
+		setImageSources(imgSources)
+  }
 
 	return (
 		<section id='cities'>
 			<h1>Cities</h1>
-			<CityImage city='Berlin' imageSources={imageSources} />
-			<img src={imageUrl} alt='Berlin' />
+			<PreviewCityImage city='Berlin' imageSources={imageSources} />
 		</section>
 	)
 }

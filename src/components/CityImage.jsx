@@ -1,6 +1,7 @@
-const CityImage = (city, imageSources) => {
+const CityImage = ({ city, imageSources }) => {
+	console.log(imageSources)
 	return (
-	<picture className='city-image'>
+	<picture>
 			<source type="image/webp" media="(min-width: 56.25rem)" srcSet={imageSources.lWebp} />
 			<source type="image/jpeg" media="(min-width: 56.25rem)" srcSet={imageSources.lJpg} />
 
@@ -10,7 +11,7 @@ const CityImage = (city, imageSources) => {
 			<source type="image/webp" srcSet={imageSources.sWebp} />
 			<source type="image/jpeg" srcSet={imageSources.sJpg} />
 
-			<img src={imageSources.mJpg} alt={city} />
+			<img className='city-image' src={imageSources.mJpg} alt={city} />
 	</picture>
 	)
 }

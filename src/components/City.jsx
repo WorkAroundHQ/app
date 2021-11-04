@@ -9,17 +9,18 @@ const City = ({ city }) => {
 
 	useEffect(() => {
 		if (!loaded) getImagePaths(city.bucket_folder)
-  }, [loaded])
+  })
 
 	const getImagePaths = async (cityFolder) => {
+		const imagePaths = []
 		try {
       const { data, error } = await supabase.storage.from('city-images').list(cityFolder)
       if (error) {
         throw error
       }
-			const imagePaths = data.map(img => {
-				return `${cityFolder}${img.name}`
-			})
+			for (const img of data) {
+				imagePaths.push(`${cityFolder}${img.name}`)
+			}
 			setLoaded(true)
       getSignedUrl(imagePaths)
     } catch (error) {
@@ -40,6 +41,7 @@ const City = ({ city }) => {
 		for (const path of paths) {
 			const fileName = getImgKey(path)
 			try {
+				console.info(`GET SIGNED URL: ${path}`)
 				const { data, error } = await supabase.storage.from('city-images').createSignedUrl(path, 3600)
 				if (error) {
 					throw error

@@ -9,7 +9,7 @@ const Cities = () => {
 
 	useEffect(() => {
 		if (!loaded) getCities()
-  }, [loaded])
+	}, [loaded, cities])
 	
 	const getCities = async () => {
 		try {

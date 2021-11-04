@@ -4,34 +4,57 @@
 
 nav.sidebar{
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	background: $gray-90;
 	border-radius: 16px;
+	margin: 0px 8px 8px 8px;
 	padding: 12px;
 
 	@include for-size(tablet-landscape-up) {
 		min-height: 550px;
 		margin: 24px 44px 24px 24px;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: center;
+		// position: sticky;
+		// bottom: 0;
 	}
 
 	div.sidebar-top {
 		display: flex;
-		flex-direction: column;
+		flex-direction: row;
 		justify-content: space-between;
 		align-items: center;
 
+		div.sidebar-logo {
+			margin: 0 24px 0 0;
+		}
+
 		@include for-size(tablet-landscape-up) {
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+
 			div.sidebar-logo {
 				margin: 12px 0 96px;
 			}
 		}
 
-		div.sidebar-pages > a.react-link {
-			display: block;
-			&:not(:last-child) {
-				margin-bottom: 24px;
+		div.sidebar-pages {
+			display: flex;
+
+			& > a.react-link {
+				display: block;
+			}
+
+			@include for-size(tablet-landscape-up) {
+				flex-direction: column;
+
+				& > a.react-link:not(:last-child) {
+					margin-bottom: 24px;
+				}
 			}
 		}
 	}

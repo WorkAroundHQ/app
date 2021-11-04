@@ -3,12 +3,13 @@ import { supabase } from '../supabaseClient'
 import PreviewCityImage from '../components/PreviewCityImage'
 import '../scss/components/city.scss'
 
-const City = ({ city, cityFolder }) => {
+const City = ({ city }) => {
 	const [imageSources, setImageSources] = useState({})
+	const [loaded, setLoaded] = useState(false)
 
 	useEffect(() => {
-    if (cityFolder) getImagePaths(cityFolder)
-  })
+		if (!loaded) getImagePaths(city.bucket_folder)
+  }, [loaded])
 
 	const getImagePaths = async (cityFolder) => {
 		try {
@@ -19,6 +20,7 @@ const City = ({ city, cityFolder }) => {
 			const imagePaths = data.map(img => {
 				return `${cityFolder}${img.name}`
 			})
+			setLoaded(true)
       getSignedUrl(imagePaths)
     } catch (error) {
       console.log('Error getting signed url: ', error.message)
@@ -38,7 +40,7 @@ const City = ({ city, cityFolder }) => {
 		for (const path of paths) {
 			const fileName = getImgKey(path)
 			try {
-				const { data, error } = await supabase.storage.from('city-images').createSignedUrl(path, 2)
+				const { data, error } = await supabase.storage.from('city-images').createSignedUrl(path, 3600)
 				if (error) {
 					throw error
 				}
@@ -52,11 +54,11 @@ const City = ({ city, cityFolder }) => {
 
 	return (
 		<div className='city'>
-			<PreviewCityImage city={city} imageSources={imageSources} />
+			<PreviewCityImage city={city.name} imageSources={imageSources} />
 			<div className='city-attributes'>
 				<div className='city-details'>
-					<p className='city-name'>Berlin</p>
-					<p className='city-country'>Germany</p>
+					<p className='city-name'>{city.name}</p>
+					<p className='city-country'>{city.countries.name}</p>
 				</div>
 				<div className='city-info'>
 					<ion-icon name="partly-sunny"></ion-icon>

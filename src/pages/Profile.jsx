@@ -57,7 +57,6 @@ const Profile = ({ session }) => {
 	}
 
 	const updateProfile = async () => {
-		console.log('Profile Updated!')
 		try {
       setLoading(true)
       const user = supabase.auth.user()

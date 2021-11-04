@@ -1,13 +1,41 @@
+import { useEffect, useState } from 'react'
+import { supabase } from '../supabaseClient'
 import City from '../components/City'
 import '../scss/pages/cities.scss'
 
 const Cities = () => {
-	const cityFolder = 'europe/germany/berlin/'
+	const [cities, setCities] = useState([])
+	const [loaded, setLoaded] = useState(false)
 
+	useEffect(() => {
+		if (!loaded) getCities()
+  }, [loaded])
+	
+	const getCities = async () => {
+		try {
+			const { data: cities, error } = await supabase
+			.from('cities')
+			.select(`
+				name,
+				countries (
+					name
+				),
+				bucket_folder
+			`)
+			if (error) throw error
+			setLoaded(true)
+			setCities(cities)
+		} catch (error) {
+			console.log('Error downloading image: ', error.message)
+		}
+	}
+			
 	return (
 		<section id='cities'>
 			<h1>Cities</h1>
-			<City city='Berlin' cityFolder={cityFolder} />
+			{cities.map((city) => (
+				<City city={city} key={city.name} />
+			))}
 		</section>
 	)
 }

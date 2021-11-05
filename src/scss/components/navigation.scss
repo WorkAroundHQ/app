@@ -12,6 +12,10 @@ nav.navigation{
 	margin: 0px 8px 8px 8px;
 	padding: 8px;
 
+	@include for-size(tablet-portrait-up) {
+		margin: 0px 16px 16px 16px;
+	}
+
 	@include for-size(tablet-landscape-up) {
 		min-height: 550px;
 		margin: 24px 0px 24px 24px;

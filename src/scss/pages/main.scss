@@ -14,7 +14,12 @@ div.main-container {
   main.content {
     width: 100%;
     overflow-y: scroll;
-    padding: 0 8px;
+    padding: 12px;
+    height: 100vh;
+
+    @include for-size(tablet-portrait-up) {
+      padding: 16px;
+    }
 
     @include for-size(tablet-landscape-up) {
       padding-left: 44px;

@@ -17,13 +17,14 @@ div.page-link {
 
 	@include for-size(tablet-landscape-up) {
 		width: 64px;
+		
+		&:hover {
+			background: $gray-100;
+			border-radius: 12px;
+			cursor: pointer;
+		}
 	}
 	
-	&:hover {
-		background: $gray-100;
-		border-radius: 12px;
-		cursor: pointer;
-	}
 
 	&:active,
 	&.active {

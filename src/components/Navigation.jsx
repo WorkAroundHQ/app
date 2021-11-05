@@ -13,37 +13,35 @@ const Navigation = () => {
   }, [location.pathname])
 
 	return (
-		<nav className='sidebar'>
-			<div className='sidebar-top'>
-				<Logo width='42' height='40' color='#3C3C3C' />
-				<div className="sidebar-pages">
-					<PageLink page={{
-						href: '/',
-						currentPage: currentPage,
-						image: 'home',
-						text: 'Home'
-					}}/>
-					<PageLink page={{
-						href: '/cities',
-						currentPage: currentPage,
-						image: 'globe-outline',
-						text: 'Cities'
-					}}/>
-					<PageLink page={{
-						href: '/articles',
-						currentPage: currentPage,
-						image: 'newspaper',
-						text: 'Articles'
-					}}/>
-				</div>
+		<nav className='navigation'>
+			<Logo width='42' height='40' color='#3C3C3C' />
+			<div className="navigation-pages">
+				<PageLink page={{
+					href: '/',
+					currentPage: currentPage,
+					image: 'home',
+					text: 'Home'
+				}}/>
+				<PageLink page={{
+					href: '/cities',
+					currentPage: currentPage,
+					image: 'globe-outline',
+					text: 'Cities'
+				}}/>
+				<PageLink page={{
+					href: '/articles',
+					currentPage: currentPage,
+					image: 'newspaper',
+					text: 'Articles'
+				}}/>
 			</div>
-			<div className="sidebar-account">
-			<PageLink page={{
-						href: '/profile',
-						currentPage: currentPage,
-						image: 'person-circle',
-						text: 'Profile'
-					}}/>
+			<div className="navigation-account">
+				<PageLink page={{
+					href: '/profile',
+					currentPage: currentPage,
+					image: 'person-circle',
+					text: 'Profile'
+				}}/>
 			</div>
 		</nav>
 	)

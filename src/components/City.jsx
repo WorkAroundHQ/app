@@ -29,7 +29,8 @@ const City = ({ city }) => {
 	}
 
 	const getImgKey = (path) => {
-		const fileName = path.split('/').at(-1)
+		const splittedPath = path.split('/')
+		const fileName = splittedPath[splittedPath.length - 1]
 		const imgSize = fileName.split('-')[0]
 		let imgType = fileName.split('.')[1]
 		imgType = imgType[0].toUpperCase() + imgType.substring(1)

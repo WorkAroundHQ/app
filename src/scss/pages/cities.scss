@@ -6,7 +6,7 @@ div.cities-list {
 	flex-wrap: wrap;
 	gap: 16px 8px;
 
-	@include for-size(tablet-landscape-up) {
+	@include for-size(tablet-portrait-up) {
 		justify-content: flex-start;
 		gap: 20px;
 	}

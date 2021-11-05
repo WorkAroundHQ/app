@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react'
-import { supabase } from '../supabaseClient'
 import PreviewCityImage from '../components/PreviewCityImage'
 import '../scss/components/city.scss'
 

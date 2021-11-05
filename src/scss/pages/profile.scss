@@ -7,7 +7,6 @@ section#profile {
   row-gap: 15px;
 	align-items: center;
 	margin: 0;
-	height: 100%;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 50px 205px auto auto 35px;
 	grid-template-areas:
@@ -15,11 +14,10 @@ section#profile {
 		"avatar avatar"
 		"form form"
 		"form form"
-		"signout .";
+		"signout signout";
 	
 	@include for-size(tablet-landscape-up) {
 		height: fit-content;
-		margin: 24px 24px 24px 0;
 		grid-template-columns: repeat(3, 1fr) 150px 1fr;
 		grid-template-rows: 75px repeat(3, auto) 75px;
 		grid-template-areas:
@@ -39,6 +37,11 @@ section#profile {
 
 	div.profile-avatar {
 		grid-area: avatar;
+		justify-self: center;
+
+		@include for-size(tablet-landscape-up) {
+			justify-self: flex-start;
+		}
 	}
 
 	button.button {
@@ -52,6 +55,10 @@ section#profile {
 
 	button.button.attention {
 		grid-area: signout;
-		justify-self: flex-start;
+		justify-self: center;
+
+		@include for-size(tablet-landscape-up) {
+			justify-self: flex-start;
+		}
 	}
 }

@@ -2,37 +2,64 @@
 @import '../util/fonts.scss';
 @import '../util/brpoints.scss';
 
-nav.sidebar{
+nav.navigation{
 	display: flex;
-	flex-direction: column;
+	flex-direction: row;
 	justify-content: space-between;
 	align-items: center;
 	background: $gray-90;
 	border-radius: 16px;
-	padding: 12px;
+	margin: 0px 8px 8px 8px;
+	padding: 8px;
+
+	@include for-size(tablet-portrait-up) {
+		margin: 0px 16px 16px 16px;
+	}
 
 	@include for-size(tablet-landscape-up) {
 		min-height: 550px;
-		margin: 24px 44px 24px 24px;
-	}
-
-	div.sidebar-top {
-		display: flex;
+		margin: 24px 0px 24px 24px;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
+		padding: 12px;
+	}
+
+	div.logo {
+		display: none;
+		margin: 0 24px 0 0;
 
 		@include for-size(tablet-landscape-up) {
-			div.sidebar-logo {
-				margin: 12px 0 96px;
-			}
+			display: block;	
+			margin: 12px 0 12px;
 		}
+	}
 
-		div.sidebar-pages > a.react-link {
+	div.navigation-pages {
+		display: flex;
+		justify-content: space-evenly;
+		flex-grow: 3;
+
+		& > a.react-link {
 			display: block;
-			&:not(:last-child) {
+		}
+		
+		@include for-size(tablet-landscape-up) {
+			justify-content: center;
+			flex-direction: column;
+			flex-grow: 0;
+
+			& > a.react-link:not(:last-child) {
 				margin-bottom: 24px;
 			}
+		}
+	}
+
+	div.navigation-account {
+		flex-grow: 1;
+
+		@include for-size(tablet-landscape-up) {
+			flex-grow: 0;
 		}
 	}
 }

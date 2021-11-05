@@ -1,24 +1,30 @@
 @import '../util/colors.scss';
 @import '../util/fonts.scss';
+@import '../util/brpoints.scss';
 
 a.react-link {
 	text-decoration: none;
 }
 
 div.page-link {
-	width: 64px;
+	width: 48px;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	border-radius: 2px;
 	transition: all .2s ease-in-out;
 	text-decoration: none;
-	
-	&:hover {
-		background: $gray-100;
-		border-radius: 12px;
-		cursor: pointer;
+
+	@include for-size(tablet-landscape-up) {
+		width: 64px;
+		
+		&:hover {
+			background: $gray-100;
+			border-radius: 12px;
+			cursor: pointer;
+		}
 	}
+	
 
 	&:active,
 	&.active {
@@ -32,10 +38,15 @@ div.page-link {
 	}
 
 	ion-icon {
-		width: 32px;
-		height: 32px;
-		margin: 8px 0 2px;
+		width: 24px;
+		height: 24px;
+		margin: 6px 0 2px;
 		color: $gray-700;
+
+		@include for-size(tablet-landscape-up) {
+			width: 32px;
+			height: 32px;
+		}
 	}
 
 	p.page-link-text {

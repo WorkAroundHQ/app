@@ -1,9 +1,29 @@
+@import '../util/brpoints.scss';
+
 div.main-container {
   width: 100vw;
   height: 100vh;
   display: flex;
+  flex-direction: column-reverse;
+  overflow-x: hidden;
+
+  @include for-size(tablet-landscape-up) {
+		flex-direction: row
+	}
 
   main.content {
     width: 100%;
+    overflow-y: scroll;
+    padding: 12px;
+    height: 100vh;
+
+    @include for-size(tablet-portrait-up) {
+      padding: 16px;
+    }
+
+    @include for-size(tablet-landscape-up) {
+      padding-left: 44px;
+      padding-bottom: 24px;
+    }
   }
 }

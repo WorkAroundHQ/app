@@ -67,4 +67,4 @@ If you have any feedback, please reach out to us [@WorkAroundHQ](https://twitter
 
 [MIT](https://github.com/WorkAroundWorld/WorkAroundHQ/blob/main/LICENSE)
 
-Made wit ❤️ and ☕️
+Made with ❤️ and ☕️

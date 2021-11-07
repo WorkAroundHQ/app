@@ -104,27 +104,25 @@ const Cities = () => {
 		}
 	}
 
+	const applyChanges = (cityId, likedValue) => {
+		setCities(cities.map((city) => {
+			if (city.id === cityId) {
+				return { ...city, liked: likedValue }
+			} else {
+				return city
+			}
+		}))
+	}
+
 	const toggleLike = async (cityId) => {
 		const userCityLikeRelation = await getUserCityLikeRelation(cityId)
 		if (userCityLikeRelation.length !== 0) {
 			const updatedRelation = { ...userCityLikeRelation[0], liked: !userCityLikeRelation[0].liked }
 			updateUserCityLikeRelation(updatedRelation)
-			setCities(cities.map((city) => {
-				if (city.id === updatedRelation.city_id) {
-					return { ...city, liked: updatedRelation.liked }
-				} else {
-					return city
-				}
-			}))
+			applyChanges(updatedRelation.city_id, updatedRelation.liked)
 		} else {
 			createUserCityLikeRelation(cityId, true)
-			setCities(cities.map((city) => {
-				if (city.id === cityId) {
-					return { ...city, liked: true }
-				} else {
-					return city
-				}
-			}))
+			applyChanges(cityId, true)
 		}
   }
 

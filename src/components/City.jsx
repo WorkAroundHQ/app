@@ -31,7 +31,7 @@ const City = ({ city, onToggle }) => {
 
 	return (
 		<div className='city'>
-			<div className={`city-like${city.liked ? ' liked' : ''}`} onClick={() => onToggle(city)}>
+			<div className={`city-like${city.liked ? ' liked' : ''}`} onClick={() => onToggle(city.id)}>
 				{city.liked ? <ion-icon name="heart"></ion-icon> : <ion-icon name="heart-outline"></ion-icon>}
 			</div>
 			<PreviewCityImage city={city.name} imageSources={imageSources} />

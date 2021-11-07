@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import PreviewCityImage from '../components/PreviewCityImage'
 import '../scss/components/city.scss'
 
-const City = ({ city }) => {
+const City = ({ city, onToggle }) => {
 	const [imageSources, setImageSources] = useState({})
 	const [loaded, setLoaded] = useState(false)
 
@@ -31,6 +31,9 @@ const City = ({ city }) => {
 
 	return (
 		<div className='city'>
+			<div className={`city-like${city.liked ? ' liked' : ''}`} onClick={() => onToggle(city)}>
+				{city.liked ? <ion-icon name="heart"></ion-icon> : <ion-icon name="heart-outline"></ion-icon>}
+			</div>
 			<PreviewCityImage city={city.name} imageSources={imageSources} />
 			<div className='city-attributes'>
 				<div className='city-details'>

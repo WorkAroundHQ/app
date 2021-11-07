@@ -52,6 +52,18 @@ const Cities = () => {
 		}
 	}
 
+	const toggleLike = (cityToToggle) => {
+		const updatedCity = { ...cityToToggle, liked: !cityToToggle.liked }
+
+    setCities(cities.map((city) => {
+			if (city.id === updatedCity.id) {
+				return { ...city, liked: updatedCity.liked }
+			} else {
+				return city
+			}
+		}))
+  }
+
 	if (!loaded) getCities()
 
 	return (
@@ -59,7 +71,7 @@ const Cities = () => {
 			<h1>Cities</h1>
 			<div className='cities-list'>
 				{cities.map((city) => (
-					<City city={city} key={city.name} />
+					<City key={city.name} city={city} onToggle={toggleLike} />
 				))}
 			</div>
 		</section>

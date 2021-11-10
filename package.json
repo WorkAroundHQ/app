@@ -2,6 +2,7 @@
   "name": "app-wa",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://app.workaround.world",
   "devDependencies": {
     "eslint-plugin-react-hooks": "^4.2.0",
     "node-sass": "6.0.1",

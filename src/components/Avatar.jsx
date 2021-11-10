@@ -19,7 +19,7 @@ const Avatar = ({ url, size, onUpload, editing }) => {
       const url = URL.createObjectURL(data)
       setAvatarUrl(url)
     } catch (error) {
-      console.log('Error downloading image: ', error.message)
+      console.error('Error downloading image: ', error.message)
     }
   }
 
@@ -40,9 +40,7 @@ const Avatar = ({ url, size, onUpload, editing }) => {
         .from('avatars')
         .upload(filePath, file)
 
-      if (uploadError) {
-        throw uploadError
-      }
+      if (uploadError) throw uploadError
 
       onUpload(filePath)
     } catch (error) {

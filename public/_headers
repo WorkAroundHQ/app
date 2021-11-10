@@ -1,6 +1,6 @@
 # This is a config for Netlify to add these headers
 /*
-	Content-Security-Policy: default-src 'self'; script-src 'self' *.workaround.world; font-src 'self' https://fontshare.com; img-src 'self' data: blob:; object-src 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;
+	Content-Security-Policy: default-src 'self'; script-src 'self' *.workaround.world; font-src 'self' https://fontshare.com; img-src 'self' data: blob:; object-src 'none'; style-src 'self' https:; 'unsafe-inline'; upgrade-insecure-requests;
 	X-Frame-Options: DENY
 	X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block

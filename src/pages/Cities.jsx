@@ -6,10 +6,6 @@ import '../scss/pages/cities.scss'
 const Cities = () => {
 	const [cities, setCities] = useState([])
 	const [loaded, setLoaded] = useState(false)
-
-	// useEffect(() => {
-	// 	if (!loaded) getCities()
-	// }, [loaded, cities])
 	
 	const getCities = async () => {
 		try {
@@ -23,25 +19,26 @@ const Cities = () => {
 				),
 				bucket_folder
 			`)
+
 			if (error) throw error
-			getLikedCities(cities)
+			getUserLikedCities(cities)
 		} catch (error) {
 			console.error('Error getting cities: ', error.message)
 		}
 	}
 
-	const getLikedCities = async (cities) => {
+	const getUserLikedCities = async (cities) => {
 		try {
-			const { data: likedCities, error } = await supabase
+			let { data: userLikedCities, error } = await supabase
   			.from('user_likes_city')
-  			.select('id, city_id')
+  			.select('id, city_id, user_id, liked')
 
 			if (error) throw error
 			for (const city of cities) {
 				city.liked = false
-				for (const likedCity of likedCities) {
-					if (city.id === likedCity.city_id) {
-						city.liked = true
+				for (const userLikedCity of userLikedCities) {
+					if (city.id === userLikedCity.city_id) {
+						city.liked = userLikedCity.liked
 					}
 				}
 			}
@@ -52,6 +49,83 @@ const Cities = () => {
 		}
 	}
 
+	const getUserCityLikeRelation = async (cityId) => {
+		try {
+			const { data: userCityLikeRelation, error } = await supabase
+  			.from('user_likes_city')
+  			.select(`
+					id,
+					city_id,
+					user_id,
+					liked
+				`)
+				.eq('city_id', cityId)
+
+			if (error) throw error
+			return userCityLikeRelation
+		} catch (error) {
+			console.error('Error getting liked cities: ', error.message)
+		}
+	}
+
+	const updateUserCityLikeRelation = async (updatedRelation) => {
+		try {
+			const updates = {
+				id: updatedRelation.id,
+				liked: updatedRelation.liked,
+				user_id: updatedRelation.user_id,
+				city_id: updatedRelation.city_id
+			}
+			let { error } = await supabase
+				.from('user_likes_city')
+				.upsert(updates, { returning: 'minimal' })
+
+			if (error) throw error
+		} catch (error) {
+			console.error('Error updating user cities relation: ', error)
+		}
+	}
+
+	const createUserCityLikeRelation = async (cityId, liked) => {
+		try {
+			const { error } = await supabase
+			.from('user_likes_city')
+			.insert([
+				{
+					user_id: supabase.auth.user().id,
+					city_id: cityId,
+					liked: liked
+				}
+			])
+
+			if (error) throw error
+		} catch (error) {
+			console.error('Error inserting user cities relation: ', error)
+		}
+	}
+
+	const applyChanges = (cityId, likedValue) => {
+		setCities(cities.map((city) => {
+			if (city.id === cityId) {
+				return { ...city, liked: likedValue }
+			} else {
+				return city
+			}
+		}))
+	}
+
+	const toggleLike = async (cityId) => {
+		const userCityLikeRelation = await getUserCityLikeRelation(cityId)
+		if (userCityLikeRelation.length !== 0) {
+			const updatedRelation = { ...userCityLikeRelation[0], liked: !userCityLikeRelation[0].liked }
+			updateUserCityLikeRelation(updatedRelation)
+			applyChanges(updatedRelation.city_id, updatedRelation.liked)
+		} else {
+			createUserCityLikeRelation(cityId, true)
+			applyChanges(cityId, true)
+		}
+  }
+
 	if (!loaded) getCities()
 
 	return (
@@ -59,7 +133,7 @@ const Cities = () => {
 			<h1>Cities</h1>
 			<div className='cities-list'>
 				{cities.map((city) => (
-					<City city={city} key={city.name} />
+					<City key={city.name} city={city} onToggle={toggleLike} />
 				))}
 			</div>
 		</section>

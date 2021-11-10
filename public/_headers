@@ -1,6 +1,6 @@
 # This is a config for Netlify to add these headers to requests
 /*
-	Content-Security-Policy: default-src 'self'; script-src 'self' *.workaround.world https://unpkg.com 'unsafe-inline'; connect-src 'self' *.workaround.world https://*.supabase.co https://unpkg.com; font-src 'self' https://cdn.fontshare.com; img-src 'self' data: blob:; object-src 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;
+	Content-Security-Policy: default-src 'none'; script-src 'self' *.workaround.world https://unpkg.com 'strict-dynamic'; connect-src 'self' *.workaround.world https://*.supabase.co https://unpkg.com; font-src 'self' https://cdn.fontshare.com; img-src 'self' data: blob:; object-src 'none'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; style-src 'self' https:; upgrade-insecure-requests;
 	X-Frame-Options: DENY
 	X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block

@@ -9,7 +9,7 @@ import '../scss/pages/main.scss'
 const Main = ({ session }) => {
 
 	return (
-    <Router>
+    <Router basename='/'>
       <div className='main-container'>
         <Navigation />
         <main className='content'>

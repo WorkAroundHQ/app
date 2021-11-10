@@ -1,4 +1,4 @@
-# This is a config for Netlify to add these headers
+# This is a config for Netlify to add these headers to requests
 /*
 	Content-Security-Policy: default-src 'self'; script-src 'self' *.workaround.world https://unpkg.com 'unsafe-inline'; connect-src 'self' *.workaround.world https://*.supabase.co https://unpkg.com; font-src 'self' https://cdn.fontshare.com; img-src 'self' data: blob:; object-src 'none'; style-src 'self' https: 'unsafe-inline'; upgrade-insecure-requests;
 	X-Frame-Options: DENY

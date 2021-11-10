@@ -1,0 +1,6 @@
+# This is a config for Netlify to redirect the browser to these pages
+/						/
+/cities  		/
+/articles   /
+/profile    /
+/*          /

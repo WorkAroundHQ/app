@@ -40,7 +40,6 @@ test('that on edit button click it changes to save button', () => {
 
 	const editBtn = screen.getByRole('button', { name: /Edit/ })
 
-	expect(editBtn).toBeEnabled()
 	editBtn.click()
 	expect(editBtn).toHaveTextContent(/Save/)
 })
@@ -69,4 +68,15 @@ test('that on edit button click the inputs get enabled (except email)', () => {
 	expect(githubInput).toBeEnabled()
 	expect(openInput).toBeEnabled()
 	expect(aboutInput).toBeEnabled()
+})
+
+test('that the upload button is only visible while editing', () => {
+	render(<Profile session={getSession()} />)
+
+	const editBtn = screen.getByRole('button', { name: /Edit/ })
+	const uploadBtn = screen.getByTestId('upload-button')
+	
+	expect(uploadBtn).not.toBeVisible()
+	editBtn.click()
+	expect(uploadBtn).toBeVisible()
 })

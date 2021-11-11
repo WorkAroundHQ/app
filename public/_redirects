@@ -1,0 +1,7 @@
+# This is a config for Netlify to redirect the following
+# routes to the HashRouter representation
+/           /#/
+/cities     /#/cities
+/articles   /#/articles
+/profile    /#/profile
+/*          /#/

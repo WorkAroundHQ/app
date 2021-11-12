@@ -6,7 +6,7 @@ import getSession from './helper/get-session'
 test('that the edit button is active by default', () => {
 	render(<Profile session={getSession()} />)
 
-	const editBtn = screen.getByRole('button', { name: /^Edi$/ })
+	const editBtn = screen.getByRole('button', { name: /^Edit$/ })
 
 	expect(editBtn).toBeEnabled()
 })

@@ -15,18 +15,13 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    - name: Yarn Setup
+      uses: DerYeger/yarn-setup-action@master
+      with:
+        node-version: ${{ matrix.node-version }}
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install Dependencies
-      uses: borales/actions-yarn@v2.3.0
-      with:
-        cmd: install    
-    - name: Start Tests
-      uses: borales/actions-yarn@v2.3.0
-      env:
-        SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
-        SUPABASE_ANON_KEY: ${{ secrets.REACT_APP_SUPABASE_ANON_KEY }}
-      with:
-        cmd: cross-env REACT_APP_SUPABASE_URL=$SUPABASE_URL REACT_APP_SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY test
+    - run: yarn install
+    - run: cross-env REACT_APP_SUPABASE_URL=${{ secrets.REACT_APP_SUPABASE_URL }} REACT_APP_SUPABASE_ANON_KEY=${{ secrets.REACT_APP_SUPABASE_ANON_KEY }} yarn test

@@ -67,6 +67,8 @@ Frontend: [React](https://reactjs.org), [SCSS](https://sass-lang.com)
 
 Backend: [Supabase](https://supabase.io)
 
+Hosting: [Netlify](https://www.netlify.com)
+
 ## Feedback
 
 If you have any feedback, please reach out to us [@WorkAroundHQ](https://twitter.com/workaroundhq)

@@ -24,5 +24,8 @@ jobs:
       with:
         cmd: install    
     - uses: borales/actions-yarn@v2.3.0
+      env:
+        SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
+        SUPABASE_ANON_KEY: ${{ secrets.REACT_APP_SUPABASE_ANON_KEY }}
       with:
-        cmd: test
+        cmd: cross-env REACT_APP_SUPABASE_URL=$SUPABASE_URL REACT_APP_SUPABASE_ANON_KEY=$SUPABASE_ANON_KEY test

@@ -21,38 +21,38 @@ const Profile = ({ session }) => {
 	const [openForWork, setOpenForWork] = useState(false)
 
 	useEffect(() => {
-    getProfile()
+		let isMounted = true;
+    getProfile().then(profile => {
+			if (isMounted) {
+				setName(profile.name)
+				setAvatarUrl(profile.avatar_url)
+				setJob(profile.job)
+				setBio(profile.bio)
+				setTwitter(profile.twitter)
+				setInstagram(profile.instagram)
+				setLinkedin(profile.linkedin)
+				setGithub(profile.github)
+				setOpenForWork(profile.open_for_work)
+				setLoading(false)
+			}
+		})
+		return () => { isMounted = false }
   }, [session])
 
 	const getProfile = async () => {
 		try {
       setLoading(true)
-      const user = supabase.auth.user()
       let { data, error, status } = await supabase
         .from('users')
         .select(`name, avatar_url, job, bio, twitter, instagram, linkedin, github, open_for_work`)
-        .eq('id', user.id)
         .single()
 
       if (error && status !== 406) {
         throw error
       }
-
-      if (data) {
-				setName(data.name)
-				setAvatarUrl(data.avatar_url)
-				setJob(data.job)
-				setBio(data.bio)
-				setTwitter(data.twitter)
-				setInstagram(data.instagram)
-				setLinkedin(data.linkedin)
-				setGithub(data.github)
-				setOpenForWork(data.open_for_work)
-      }
+			return data
     } catch (error) {
       alert(error.message)
-    } finally {
-      setLoading(false)
     }
 	}
 

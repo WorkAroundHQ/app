@@ -1,0 +1,30 @@
+name: Automated Tests CI
+
+on:
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [12.x, 14.x, 16.x]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Yarn Setup
+      uses: DerYeger/yarn-setup-action@master
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+    - name: Run tests
+      env:
+        REACT_APP_SUPABASE_URL: ${{ secrets.REACT_APP_SUPABASE_URL }}
+        REACT_APP_SUPABASE_ANON_KEY: ${{ secrets.REACT_APP_SUPABASE_ANON_KEY }}
+      run: yarn cross-env REACT_APP_SUPABASE_URL=$REACT_APP_SUPABASE_URL REACT_APP_SUPABASE_ANON_KEY=$REACT_APP_SUPABASE_ANON_KEY react-scripts test

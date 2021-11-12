@@ -26,6 +26,8 @@ cd app
 yarn
 ```
 
+3. Add values to `.env` file (see `sample.env`):
+
 4. Start development server:
 
 ```zsh
@@ -36,8 +38,20 @@ yarn start
 
 Run automated tests:
 
+> These tests also get executed with GitHub Actions on PRs onto `main`!
+
 ```zsh
 yarn test
+```
+
+Run cypress tests:
+
+1. Add values to `cypress.env.json` (see `sample.cypress.env.json`)
+
+2. Start cypress:
+
+```zsh
+yarn cy
 ```
 
 ## Deployment
@@ -49,11 +63,11 @@ The deployment process is simple:
 
 ## Tech Stack
 
-Frontend: React, SCSS
+Frontend: [React](https://reactjs.org), [SCSS](https://sass-lang.com)
 
-Backend: Supabase
+Backend: [Supabase](https://supabase.io)
 
-
+Hosting: [Netlify](https://www.netlify.com)
 
 ## Feedback
 
@@ -65,6 +79,6 @@ If you have any feedback, please reach out to us [@WorkAroundHQ](https://twitter
 
 ## License
 
-[MIT](https://github.com/WorkAroundWorld/WorkAroundHQ/blob/main/LICENSE)
+[Mozilla Public License Version 2.0](https://github.com/WorkAroundHQ/app/blob/main/LICENSE)
 
 Made with ❤️ and ☕️

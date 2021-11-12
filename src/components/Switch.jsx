@@ -10,6 +10,7 @@ const Switch = ({ className, id, label, value, handleChange, disabled }) => {
 					id={id}
 					type="checkbox"
 					value={value}
+					checked={value}
 					onChange={(e) => handleChange(e.target.checked)}
 					disabled={disabled}
 					/>

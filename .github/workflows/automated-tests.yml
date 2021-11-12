@@ -19,6 +19,10 @@ jobs:
       uses: actions/setup-node@v2
       with:
         node-version: ${{ matrix.node-version }}
-        cache: 'npm'
-    - run: npm ci
-    - run: npm test
+        cache: 'yarn'
+    - uses: borales/actions-yarn@v2.3.0
+      with:
+        cmd: install    
+    - uses: borales/actions-yarn@v2.3.0
+      with:
+        cmd: test

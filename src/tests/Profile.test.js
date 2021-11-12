@@ -6,7 +6,7 @@ import getSession from './helper/get-session'
 test('that the edit button is active by default', () => {
 	render(<Profile session={getSession()} />)
 
-	const editBtn = screen.getByRole('button', { name: /Edi/ })
+	const editBtn = screen.getByRole('button', { name: /^Edi$/ })
 
 	expect(editBtn).toBeEnabled()
 })
@@ -38,16 +38,16 @@ test('that all form inputs are disabled by default', () => {
 test('that on edit button click it changes to save button', () => {
 	render(<Profile session={getSession()} />)
 
-	const editBtn = screen.getByRole('button', { name: /Edit/ })
+	const editBtn = screen.getByRole('button', { name: /^Edit$/ })
 
 	editBtn.click()
-	expect(editBtn).toHaveTextContent(/Save/)
+	expect(editBtn).toHaveTextContent(/^Save$/)
 })
 
 test('that on edit button click the inputs get enabled (except email)', () => {
 	render(<Profile session={getSession()} />)
 
-	const editBtn = screen.getByRole('button', { name: /Edit/ })
+	const editBtn = screen.getByRole('button', { name: /^Edit$/ })
 	const emailInput = screen.getByLabelText('Email')
 	const nameInput = screen.getByLabelText('Name')
 	const jobInput = screen.getByLabelText('Job Description')
@@ -73,7 +73,7 @@ test('that on edit button click the inputs get enabled (except email)', () => {
 test('that the upload button is only visible while editing', () => {
 	render(<Profile session={getSession()} />)
 
-	const editBtn = screen.getByRole('button', { name: /Edit/ })
+	const editBtn = screen.getByRole('button', { name: /^Edit$/ })
 	const uploadBtn = screen.getByTestId('upload-button')
 	
 	expect(uploadBtn).not.toBeVisible()

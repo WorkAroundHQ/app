@@ -61,13 +61,26 @@ The deployment process is simple:
 - Every push on `main` triggers a build on Netlify
 - Every open pull request with target `main`, creates a deploy preview on Netlify
 
-## Tech Stack
+## Architecture
 
-Frontend: [React](https://reactjs.org), [SCSS](https://sass-lang.com)
+![WorkAround-Architecture](https://user-images.githubusercontent.com/28442090/141678851-3a1a180d-dc42-4088-9eaa-1dfde476df6e.jpg)
 
-Backend: [Supabase](https://supabase.io)
+### Frontend
 
-Hosting: [Netlify](https://www.netlify.com)
+WorkAround is a Single Page Application developed with [`ReactJs`](https://reactjs.org) and [`SCSS`](https://sass-lang.com) as a CSS preprocessor.
+
+### Hosting
+
+WorkAround ist hosted on [`Netlify's`](https://www.netlify.com) CDN Network to provide fast loading times for users around the globe.
+
+### Backend
+
+[`Supabase`](https://supabase.io) provides three different services:
+- Database
+- Authentication / Authorization
+- Storage
+
+These services can be accessed via different REST endpoints, dynamically created by Supabase.
 
 ## Feedback
 

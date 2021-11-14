@@ -1,6 +1,6 @@
 # This is a config for Netlify to add these headers to requests
 /*
-	Content-Security-Policy: default-src 'none'; script-src 'self' *.workaround.world https://unpkg.com sha512-Ta7m7CSVtknH4g6MRSsaidvmIUYVte91DzEgKSEPZDpaVVTyXLaIPGBRSFCRRLwVsyDFCzrp8+70L5RcHz46fw== sha512-A0szvdIuCKA21xigr2/288rv04z5w6cH/GETcSny1t222OlOShgazYLkYIMUH6yAan2CxMeKkNwbmUuLqbnsBQ==; manifest-src 'self'; connect-src 'self' *.workaround.world https://*.supabase.co https://unpkg.com; font-src 'self' https://cdn.fontshare.com; img-src 'self' data: blob:; object-src 'none'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; style-src 'self' https: sha512-/C48CdRq2FlnsQTFIZWkUA+G5IIIFxgrBeQowRKnoSQ7nRmrk8h/28Pl3DQAVcStJyKO85W2dxr5T/pEpAhlXQ==; upgrade-insecure-requests;
+	Content-Security-Policy: default-src 'none'; script-src 'self' *.workaround.world https://unpkg.com 'sha512-Ta7m7CSVtknH4g6MRSsaidvmIUYVte91DzEgKSEPZDpaVVTyXLaIPGBRSFCRRLwVsyDFCzrp8+70L5RcHz46fw==' 'sha512-A0szvdIuCKA21xigr2/288rv04z5w6cH/GETcSny1t222OlOShgazYLkYIMUH6yAan2CxMeKkNwbmUuLqbnsBQ=='; manifest-src 'self'; connect-src 'self' *.workaround.world https://*.supabase.co https://unpkg.com; font-src 'self' https://cdn.fontshare.com; img-src 'self' data: blob:; object-src 'none'; form-action 'self'; base-uri 'self'; frame-ancestors 'none'; style-src 'self' https: 'sha512-/C48CdRq2FlnsQTFIZWkUA+G5IIIFxgrBeQowRKnoSQ7nRmrk8h/28Pl3DQAVcStJyKO85W2dxr5T/pEpAhlXQ=='; upgrade-insecure-requests;
 	X-Frame-Options: DENY
 	X-Content-Type-Options: nosniff
   X-XSS-Protection: 1; mode=block

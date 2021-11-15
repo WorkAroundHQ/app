@@ -42,7 +42,11 @@ div.auth-container {
 			@include heading1;
 			text-align: center;
 			color: $gray-700;
-			margin: 32px 0 48px;
+			margin: 24px 0 32px;
+
+			@include for-size(tablet-portrait-up) {
+				margin: 32px 0 48px;
+			}
 		}
 	}
 
@@ -53,10 +57,14 @@ div.auth-container {
 
 		div.auth-inputs {
 			min-height: 168px;
-			margin-bottom: 48px;
+			margin-bottom: 24px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+
+			@include for-size(tablet-portrait-up) {
+				margin-bottom: 48px;
+			}
 	
 			input.auth-input {
 				@include input;
@@ -76,6 +84,31 @@ div.auth-container {
 				&:not(:last-child) {
 					margin-bottom: 24px;
 				}
+			}
+		}
+
+		div.auth-error {
+			display: flex;
+			margin-top: 16px;
+
+			@include for-size(tablet-portrait-up) {
+				margin-top: 24px;
+			}
+
+			ion-icon, ion-icon > div {
+				min-width: 18px;
+				min-height: 18px;
+				color: $error-500;
+				margin-right: 8px;
+			}
+
+			p.auth-error-text {
+				@include body;
+				color: $error-500;
+			}
+			
+			&.hidden {
+				visibility: hidden;
 			}
 		}
 	}

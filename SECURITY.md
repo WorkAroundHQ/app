@@ -16,6 +16,10 @@ Protection:
 
 - Users can't create passwords shorter than 12 characters.
 
+Action:
+
+- Inform users to use a strong password when they try use a weak one.
+
 ### No Session Timeout
 
 _The session created after a user login has no reasonable timeout duration._
@@ -32,15 +36,29 @@ Protection:
 
 - Use of client library to not directly write SQL statements (ORM-like behavior).
 
+Detection:
+
+- Regular checks of logs
+
+Action:
+
+- Revert malicious changes
+
+- Inform users if sensitive data got stolen or publicly available.
+
 ### Dependency Vulnerablities
 
 _Dependencies used by the application are vulnerable for misuse by an attacker._
+
+Protection:
+
+- Use of only the most recent/secure versions possible (Sometimes not possible due to peer dependencies).
 
 Detection:
 
 - GitHub Dependabot alerts when a dependency has known security vulnerabilities.
 
-Protection:
+Action:
 
 - Update vulnerable dependencies to secure version.
 
@@ -72,13 +90,17 @@ Protection:
 
 _User can access data they should have no access to._
 
+Protection:
+
+- Through the use of Postgres Policies users can't access data they should not access.
+
 Detection:
 
 - `OPEN`: Log database actions
 
-Protection:
+Action:
 
-- Through the use of Postgres Policies users can't access data they should not access.
+- Inform users if sensitive data got stolen or publicly available.
 
 ### Fails to prevent clickjacking
 
@@ -95,3 +117,7 @@ _An attacker can inject malicious code through a loosely configured CSP._
 Protection:
 
 - `WIP`: A deny-by-default policy restricts executable sources to a minimum.
+
+## Resources
+
+- STRIDE Framework: https://martinfowler.com/articles/agile-threat-modelling.html#UseStrideToHelp

@@ -26,7 +26,7 @@ cd app
 yarn
 ```
 
-3. Add values to `.env` file (see `sample.env`):
+3. Add values to `.env` file (see [`sample.env`](https://github.com/WorkAroundHQ/app/blob/main/sample.env))
 
 4. Start development server:
 
@@ -46,13 +46,21 @@ yarn test
 
 Run cypress tests:
 
-1. Add values to `cypress.env.json` (see `sample.cypress.env.json`)
+1. Add values to `cypress.env.json` (see [`sample.cypress.env.json`](https://github.com/WorkAroundHQ/app/blob/main/sample.cypress.env.json))
 
-2. Start cypress:
+2. Start development server:
+
+```zsh
+yarn start
+```
+
+3. Start cypress:
 
 ```zsh
 yarn cy
 ```
+
+4. Start test in Cypress app.
 
 ## Deployment
 
@@ -81,6 +89,10 @@ WorkAround ist hosted on [`Netlify's`](https://www.netlify.com) CDN Network to p
 - Storage
 
 These services can be accessed via different REST endpoints, dynamically created by Supabase.
+
+## Security Measures
+
+Have a look on our [Security](https://github.com/WorkAroundHQ/app/blob/main/SECURITY.md) Measures.
 
 ## Feedback
 

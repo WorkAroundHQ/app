@@ -37,7 +37,7 @@ const Auth = () => {
   }
 
   const handleSignup = async (email, password, repeatedPassword) => {
-    if (password.length > 8) {
+    if (password.length >= 12) {
       if (password === repeatedPassword) {
         try {
           setLoading(true)
@@ -56,7 +56,7 @@ const Auth = () => {
         setErrorMessage('The passwords are not equal. Please try again')
       }
     } else {
-      setErrorMessage('The password is not long enough. At least 8 characters are required')
+      setErrorMessage('The password is not long enough. At least 12 characters are required')
     }
   }
 

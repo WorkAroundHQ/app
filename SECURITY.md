@@ -36,6 +36,10 @@ Protection:
 
 _Dependencies used by the application are vulnerable for misuse by an attacker._
 
+Detection:
+
+- GitHub Dependabot alerts when a dependency has known security vulnerabilities.
+
 Protection:
 
 - Update vulnerable dependencies to secure version.
@@ -67,6 +71,10 @@ Protection:
 ### Broken Access Control
 
 _User can access data they should have no access to._
+
+Detection:
+
+- `OPEN`: Log database actions
 
 Protection:
 

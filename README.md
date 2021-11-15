@@ -90,6 +90,10 @@ WorkAround ist hosted on [`Netlify's`](https://www.netlify.com) CDN Network to p
 
 These services can be accessed via different REST endpoints, dynamically created by Supabase.
 
+## Security Measures
+
+Have a look on our [Security](https://github.com/WorkAroundHQ/app/blob/main/SECURITY.md) Measures.
+
 ## Feedback
 
 If you have any feedback, please reach out to us [@WorkAroundHQ](https://twitter.com/workaroundhq)

@@ -1,12 +1,14 @@
 @import '../util/colors.scss';
 @import '../util/typography.scss';
 @import '../util/brpoints.scss';
+@import '../util/spacings.scss';
+@import '../util/misc-variables.scss';
 
 div.city {
 	width: 45vw;
 	display: flex;
 	flex-direction: column;
-	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+	box-shadow: $shadow;
 	border-radius: 6px;
 	transition: box-shadow .15s ease-in-out;
 	position: relative;
@@ -20,7 +22,7 @@ div.city {
 	}
 
 	&:hover {
-		box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+		box-shadow: $shadow-hover;
 
 		& > div.city-like {
 			opacity: 1;
@@ -33,18 +35,18 @@ div.city {
 		align-items: center;
 		justify-content: center;
 		position: absolute;
-		top: 8px;
-		right: 8px;
+		top: $spacer-2;
+		right: $spacer-2;
 		width: 32px;
 		height: 32px;
 		background-color: $white;
 		border-radius: 16px;
-		box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: $shadow;
 		transition: opacity .2s ease-out;
 		transition: box-shadow .2s ease-in-out;
 
 		&:hover {
-			box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+			box-shadow: $shadow-hover;
 		}
 
 		&.liked {
@@ -77,11 +79,7 @@ div.city {
 		display: flex;
 		justify-content: space-between;
 		align-content: center;
-		margin: 8px 8px;
-
-		@include breakpoint(sm) {
-			margin: 8px 12px;
-		}
+		margin: $spacer-2;
 
 		div.city-details {
 			p {

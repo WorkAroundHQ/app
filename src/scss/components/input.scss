@@ -15,10 +15,7 @@
 		padding: 3px 12px;
 	}
 
-	&:hover {
-		box-shadow: $shadow-hover;
-	}
-
+	&:hover,
 	&:focus-visible {
 		box-shadow: $shadow-hover;
 	}

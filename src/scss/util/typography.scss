@@ -25,7 +25,12 @@ $lh-condensed-ultra: 1;
 $lh-condensed: 1.25;
 $lh-default: normal;
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: Switzer, Helvetica, sans-serif;
 	font-style: normal;
 	line-height: $lh-default;
@@ -35,11 +40,21 @@ h1 {
 	font-weight: 700;
 }
 
-h2, h3, h4, h5, h6 {
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-weight: 600;
 }
 
-p, a, li, span, label, input, button {
+p,
+a,
+li,
+span,
+label,
+input,
+button {
 	font-family: Satoshi, Helvetica, sans-serif;
 	font-style: normal;
 	font-weight: 500;

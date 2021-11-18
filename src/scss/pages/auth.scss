@@ -91,7 +91,8 @@ div.auth-container {
 				margin-top: $spacer-4;
 			}
 
-			ion-icon, ion-icon > div {
+			ion-icon,
+			ion-icon > div {
 				min-width: 18px;
 				min-height: 18px;
 				color: $error-500;

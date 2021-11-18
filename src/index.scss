@@ -13,7 +13,16 @@ body {
   margin: 0;
 }
 
-h1, h2, h3, h4, h5, h6, p, li, a, span {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+li,
+a,
+span {
   color: $gray-700;
 }
 
@@ -42,7 +51,9 @@ h6 {
   margin: 0;
 }
 
-p, li, a {
+p,
+li,
+a {
   @include t5;
   margin: 0;
 }

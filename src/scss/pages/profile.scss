@@ -44,7 +44,7 @@ section#profile {
 		}
 	}
 
-	button.button {
+	button.btn {
 		grid-area: edit;
 		justify-self: flex-end;
 	}
@@ -53,7 +53,7 @@ section#profile {
 		grid-area: form;
 	}
 
-	button.button.attention {
+	button.btn.btn-danger {
 		grid-area: signout;
 		justify-self: center;
 

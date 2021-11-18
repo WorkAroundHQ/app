@@ -1,26 +1,36 @@
 @import '../util/colors.scss';
 @import '../util/typography.scss';
+@import '../util/misc-variables.scss';
 
-.button {
+.btn {
 	@include t4;
 	height: fit-content;
 	width: fit-content;
 	padding: 6px 16px;
 	background-color: $white;
-	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+	box-shadow: $shadow;
 	border-radius: 6px;
 	color: $gray-700;
 	border: none; 
 	user-select: none;
 	transition: all .2s ease-in-out;
 
+	&.btn-sm {
+		@include t6-responsive;
+		padding: 3px 12px;
+	}
+
+	&.btn-lg {
+		padding: 10.5px 21px;
+	}
+
 	&:hover {
 		background-color: $gray-700;
 		color: $white;
-		box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+		box-shadow: $shadow-hover;
 	}
 
-	&.primary {
+	&.btn-primary {
 		background-color: $primary-500;
 		color: $white;
 
@@ -29,7 +39,7 @@
 		}
 	}
 
-	&.attention {
+	&.btn-danger {
 		background-color: $white;
 		color: $error-500;
 
@@ -39,7 +49,7 @@
 		}
 	}
 
-	&.success {
+	&.btn-success {
 		background-color: $white;
 		color: $success-500;
 
@@ -54,6 +64,6 @@
 	}
 
 	&:focus-visible {
-		box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+		box-shadow: $shadow-hover;
 	}
 }

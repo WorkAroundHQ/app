@@ -115,7 +115,7 @@ const Profile = ({ session }) => {
 				<Switch className='checkbox' id='open_for_work' label='Open for work?' value={openForWork} handleChange={setOpenForWork} disabled={!editing} />
 				<FormElement className='text' id='bio' type='text' label='About me' value={bio} handleChange={setBio} disabled={!editing} />
 			</div>
-			<Button text='Sign out' mode='attention' onClick={() => supabase.auth.signOut()} />
+			<Button text='Sign out' mode='danger' onClick={() => supabase.auth.signOut()} />
 		</section>
 	)
 }

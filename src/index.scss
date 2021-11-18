@@ -1,4 +1,4 @@
-@import './scss/util/fonts.scss';
+@import './scss/util/typography.scss';
 @import './scss/util/colors.scss';
 
 * {
@@ -8,33 +8,40 @@
   outline: none;
 }
 
-h1 {
-  @include heading1;
+body {
+  margin: 0;
+}
+
+h1, h2, h3, h4, h5, h6, p, li, a, span {
   color: $gray-700;
+}
+
+h1 {
+  @include t0;
 }
 
 h2 {
-  @include heading2;
-  color: $gray-700;
+  @include t1;
 }
 
-h3, h4, h5 {
-  @include heading3;
-  color: $gray-700;
+h3 {
+  @include t2;
+}
+
+h4 {
+  @include t3;
+}
+
+h5 {
+  @include t4;
 }
 
 h6 {
-  @include bigbody;
-  color: $gray-700;
+  @include t5;
   margin: 0;
 }
 
 p, li, a {
-  @include body;
-  color: $gray-700;
-  margin: 0;
-}
-
-body {
+  @include t5;
   margin: 0;
 }

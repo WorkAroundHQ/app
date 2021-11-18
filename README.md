@@ -79,7 +79,7 @@ WorkAround is a Single Page Application developed with [`ReactJs`](https://react
 
 ### Hosting
 
-WorkAround ist hosted on [`Netlify's`](https://www.netlify.com) CDN Network to provide fast loading times for users around the globe.
+WorkAround ist hosted on [`Netlify's`](https://www.netlify.com) CDN to provide fast loading times for users around the globe.
 
 ### Backend
 

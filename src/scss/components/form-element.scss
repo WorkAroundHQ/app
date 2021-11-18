@@ -21,9 +21,8 @@ div.form-element {
 		}
 	}
 	
-	input {
+	input.input {
 		@include t5;
-		@include input(6px 8px);
 		color: $gray-700;
 
 		&:disabled {

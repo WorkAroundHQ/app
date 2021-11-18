@@ -2,6 +2,7 @@
 @import '../util/typography.scss';
 @import '../util/brpoints.scss';
 @import '../components/input.scss';
+@import '../util/spacings.scss';
 
 div.auth {
 	display: flex;
@@ -29,7 +30,7 @@ div.auth-container {
 		min-height: 522px;
 		height: 90vh;
 		max-height: 650px;
-		padding: 24px;
+		padding: $spacer-4;
 	}
 
 	div.auth-header {
@@ -42,10 +43,10 @@ div.auth-container {
 			@include t0;
 			text-align: center;
 			color: $gray-700;
-			margin: 24px 0 32px;
+			margin: $spacer-4 $spacer-0 $spacer-5;
 
 			@include breakpoint(sm) {
-				margin: 32px 0 48px;
+				margin: $spacer-5 $spacer-0 $spacer-7;
 			}
 		}
 	}
@@ -57,48 +58,44 @@ div.auth-container {
 
 		div.auth-inputs {
 			min-height: 168px;
-			margin-bottom: 24px;
+			margin-bottom: $spacer-4;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 
 			@include breakpoint(sm) {
-				margin-bottom: 48px;
+				margin-bottom: $spacer-7;
 			}
 	
-			input.auth-input {
-				@include input;
-				@include t5-responsive;
+			input.input {
 				width: 70vw;
 				height: 38px;
-				padding: 8px;
 				color: $gray-500;
 
 				@include breakpoint(sm) {
 					width: 300px;
 					height: 40px;
-					padding: 8px;
 				}
 	
 				&:not(:last-child) {
-					margin-bottom: 24px;
+					margin-bottom: $spacer-4;
 				}
 			}
 		}
 
 		div.auth-error {
 			display: flex;
-			margin-top: 16px;
+			margin-top: $spacer-3;
 
 			@include breakpoint(sm) {
-				margin-top: 24px;
+				margin-top: $spacer-4;
 			}
 
 			ion-icon, ion-icon > div {
 				min-width: 18px;
 				min-height: 18px;
 				color: $error-500;
-				margin-right: 8px;
+				margin-right: $spacer-2;
 			}
 
 			p.auth-error-text {

@@ -11,11 +11,11 @@ div.city {
 	transition: box-shadow .15s ease-in-out;
 	position: relative;
 
-	@include for-size(tablet-portrait-up) {
+	@include breakpoint(sm) {
 		width: 30vw;
 	}
 
-	@include for-size(tablet-landscape-up) {
+	@include breakpoint(md) {
 		width: 220px;
 	}
 
@@ -64,11 +64,11 @@ div.city {
 		object-fit: cover;
 		border-radius: 6px 6px 0 0;
 
-		@include for-size(tablet-portrait-up) {
+		@include breakpoint(sm) {
 			height: 18vw;
 		}
 
-		@include for-size(tablet-landscape-up) {
+		@include breakpoint(md) {
 			height: 126px;
 		}
 	}
@@ -79,7 +79,7 @@ div.city {
 		align-content: center;
 		margin: 8px 8px;
 
-		@include for-size(tablet-portrait-up) {
+		@include breakpoint(sm) {
 			margin: 8px 12px;
 		}
 
@@ -91,7 +91,7 @@ div.city {
 					color: $gray-500;
 				}
 				
-				@include for-size(tablet-portrait-up) {
+				@include breakpoint(sm) {
 					@include bigbody;
 					white-space: nowrap;
 					max-width: 20vw;
@@ -112,7 +112,7 @@ div.city {
 				height: 16px;
 				color: $gray-700;
 
-				@include for-size(tablet-portrait-up) {
+				@include breakpoint(sm) {
 					width: 22px;
 					height: 22px;
 				}
@@ -122,7 +122,7 @@ div.city {
 				@include body;
 				color: $gray-500;
 
-				@include for-size(tablet-portrait-up) {
+				@include breakpoint(sm) {
 					@include bigbody;
 				}
 			}

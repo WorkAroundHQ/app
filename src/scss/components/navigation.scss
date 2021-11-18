@@ -12,11 +12,11 @@ nav.navigation{
 	margin: 0px 8px 8px 8px;
 	padding: 8px;
 
-	@include for-size(tablet-portrait-up) {
+	@include breakpoint(sm) {
 		margin: 0px 16px 16px 16px;
 	}
 
-	@include for-size(tablet-landscape-up) {
+	@include breakpoint(md) {
 		min-height: 550px;
 		margin: 24px 0px 24px 24px;
 		flex-direction: column;
@@ -29,7 +29,7 @@ nav.navigation{
 		display: none;
 		margin: 0 24px 0 0;
 
-		@include for-size(tablet-landscape-up) {
+		@include breakpoint(md) {
 			display: block;	
 			margin: 12px 0 12px;
 		}
@@ -44,7 +44,7 @@ nav.navigation{
 			display: block;
 		}
 		
-		@include for-size(tablet-landscape-up) {
+		@include breakpoint(md) {
 			justify-content: center;
 			flex-direction: column;
 			flex-grow: 0;
@@ -58,7 +58,7 @@ nav.navigation{
 	div.navigation-account {
 		flex-grow: 1;
 
-		@include for-size(tablet-landscape-up) {
+		@include breakpoint(md) {
 			flex-grow: 0;
 		}
 	}

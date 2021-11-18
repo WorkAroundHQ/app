@@ -1,9 +1,12 @@
-@mixin for-size($size) {
-  @if $size == tablet-portrait-up {
+@mixin breakpoint($size) {
+  @if $size == sm {
+    // 600px
     @media (min-width: 37.5rem) { @content; }
-  } @else if $size == tablet-landscape-up {
+  } @else if $size == md {
+    // 900px
     @media (min-width: 56.25rem) { @content; }
-  } @else if $size == desktop-up {
+  } @else if $size == lg {
+    // 1200px
     @media (min-width: 75rem) { @content; }
   }
 }

@@ -15,7 +15,7 @@ div.page-link {
 	transition: all .2s ease-in-out;
 	text-decoration: none;
 
-	@include for-size(tablet-landscape-up) {
+	@include breakpoint(md) {
 		width: 64px;
 		
 		&:hover {
@@ -43,7 +43,7 @@ div.page-link {
 		margin: 6px 0 2px;
 		color: $gray-700;
 
-		@include for-size(tablet-landscape-up) {
+		@include breakpoint(md) {
 			width: 32px;
 			height: 32px;
 		}

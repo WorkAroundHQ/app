@@ -16,7 +16,7 @@ section#profile {
 		"form form"
 		"signout signout";
 	
-	@include for-size(tablet-landscape-up) {
+	@include breakpoint(md) {
 		height: fit-content;
 		grid-template-columns: repeat(3, 1fr) 150px 1fr;
 		grid-template-rows: 75px repeat(3, auto) 75px;
@@ -39,7 +39,7 @@ section#profile {
 		grid-area: avatar;
 		justify-self: center;
 
-		@include for-size(tablet-landscape-up) {
+		@include breakpoint(md) {
 			justify-self: flex-start;
 		}
 	}
@@ -57,7 +57,7 @@ section#profile {
 		grid-area: signout;
 		justify-self: center;
 
-		@include for-size(tablet-landscape-up) {
+		@include breakpoint(md) {
 			justify-self: flex-start;
 		}
 	}

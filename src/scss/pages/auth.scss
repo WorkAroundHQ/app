@@ -23,7 +23,7 @@ div.auth-container {
 	flex-direction: column;
 	justify-content: space-between;
 
-	@include for-size(tablet-portrait-up) {
+	@include breakpoint(sm) {
 		min-width: 420px;
 		width: 620px;
 		min-height: 522px;
@@ -44,7 +44,7 @@ div.auth-container {
 			color: $gray-700;
 			margin: 24px 0 32px;
 
-			@include for-size(tablet-portrait-up) {
+			@include breakpoint(sm) {
 				margin: 32px 0 48px;
 			}
 		}
@@ -62,7 +62,7 @@ div.auth-container {
 			flex-direction: column;
 			align-items: center;
 
-			@include for-size(tablet-portrait-up) {
+			@include breakpoint(sm) {
 				margin-bottom: 48px;
 			}
 	
@@ -74,7 +74,7 @@ div.auth-container {
 				padding: 8px;
 				color: $gray-500;
 
-				@include for-size(tablet-portrait-up) {
+				@include breakpoint(sm) {
 					@include bigbody;
 					width: 300px;
 					height: 40px;
@@ -91,7 +91,7 @@ div.auth-container {
 			display: flex;
 			margin-top: 16px;
 
-			@include for-size(tablet-portrait-up) {
+			@include breakpoint(sm) {
 				margin-top: 24px;
 			}
 

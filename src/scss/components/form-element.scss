@@ -2,13 +2,14 @@
 @import '../util/typography.scss';
 @import '../util/brpoints.scss';
 @import '../components/input.scss';
+@import '../util/spacings.scss';
 
 div.form-element {
 	display: flex;
 	flex-direction: row;
 	align-items: center;
-	padding: 0px;
-	margin-bottom: 1rem;
+	padding: $spacer-0;
+	margin-bottom: $spacer-3;
 	
 	label {
 		@include t5;
@@ -24,14 +25,11 @@ div.form-element {
 	input.input {
 		@include t5;
 		color: $gray-700;
+		min-width: fit-content;
+		width: 200px;
 
 		&:disabled {
 			box-shadow: none;
-		}
-		
-		&.text {
-			min-width: fit-content;
-			width: 200px;
 		}
 	}
 }

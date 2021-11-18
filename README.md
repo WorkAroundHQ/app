@@ -1,7 +1,8 @@
 # WorkAround App
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/d4dead3a-cb33-46f8-a1f2-6ad5c183aa99/deploy-status)](https://app.netlify.com/sites/app-workaround/deploys)
-[![MIT License](https://img.shields.io/apm/l/atomic-design-ui.svg?label=License&color=ffffff)](https://github.com/WorkAroundHQ/app/blob/main/LICENSE)
+![Tests](https://github.com/WorkAroundHQ/app/actions/workflows/automated-tests.yml/badge.svg)
+[![MPL-2.0 License](https://img.shields.io/badge/License-MPL--2.0-ffffff)](https://github.com/WorkAroundHQ/app/blob/main/LICENSE)
 [![WorkAroundHQ](https://img.shields.io/twitter/follow/workaroundhq?label=Follow)](https://twitter.com/workaroundhq)
 
 The WorkAround application is a platform for digital nomads who call the world their home. With WorkAround, digital nomads can pick their next ideal destination and connect with the community there.
@@ -79,7 +80,7 @@ WorkAround is a Single Page Application developed with [`ReactJs`](https://react
 
 ### Hosting
 
-WorkAround ist hosted on [`Netlify's`](https://www.netlify.com) CDN Network to provide fast loading times for users around the globe.
+WorkAround ist hosted on [`Netlify's`](https://www.netlify.com) CDN to provide fast loading times for users around the globe.
 
 ### Backend
 

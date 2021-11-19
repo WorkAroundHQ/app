@@ -1,0 +1,138 @@
+@import './brpoints.scss';
+
+// Type scale - mobile
+// 4—6 remain the same size on both mobile & desktop
+$ts00-size: 2.5rem; // 40px
+$ts0-size: 2rem; // 32px
+$ts1-size: 1.625rem; // 26px
+$ts2-size: 1.375rem; // 22px
+$ts3-size: 1.125rem; // 18px
+$ts4-size: 1rem; // 16px
+$ts5-size: .875rem; // 14px
+$ts6-size: .75rem; // 12px
+
+// Type scale - desktop
+$ts00-size-desktop: 3rem; // 48px
+$ts0-size-desktop: 2.5rem; // 40px
+$ts1-size-desktop: 2rem; // 32px
+$ts2-size-desktop: 1.5rem; // 24px
+$ts3-size-desktop: 1.25rem; // 20px
+$ts4-size-desktop: 1.125rem; // 18px
+$ts5-size-desktop: 1rem; // 16px
+$ts6-size-desktop: .875rem; // 14px
+
+$lh-condensed-ultra: 1;
+$lh-condensed: 1.25;
+$lh-default: normal;
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: Switzer, Helvetica, sans-serif;
+	font-style: normal;
+	line-height: $lh-default;
+}
+
+h1 {
+	font-weight: 700;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
+}
+
+p,
+a,
+li,
+span,
+label,
+input,
+button {
+	font-family: Satoshi, Helvetica, sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	line-height: $lh-default;
+}
+
+@mixin t00 {
+	font-size: $ts00-size;
+
+	@include breakpoint(md) {
+		font-size: $ts00-size-desktop;
+	}
+}
+
+@mixin t0 {
+	font-size: $ts0-size;
+	
+	@include breakpoint(md) {
+		font-size: $ts0-size-desktop;
+	}
+}
+
+@mixin t1 {
+	font-size: $ts1-size;
+	
+	@include breakpoint(md) {
+		font-size: $ts1-size-desktop;
+	}
+}
+
+@mixin t2 {
+	font-size: $ts2-size;
+	
+	@include breakpoint(md) {
+		font-size: $ts2-size-desktop;
+	}
+}
+
+@mixin t3 {
+	font-size: $ts3-size;
+	
+	@include breakpoint(md) {
+		font-size: $ts3-size-desktop;
+	}
+}
+
+@mixin t4 {
+	font-size: $ts4-size;
+}
+
+@mixin t5 {
+	font-size: $ts5-size;
+}
+
+@mixin t6 {
+	font-size: $ts6-size;
+}
+
+@mixin t4-responsive {
+	font-size: $ts4-size;
+
+	@include breakpoint(md) {
+		font-size: $ts4-size-desktop;
+	}
+}
+
+@mixin t5-responsive {
+	font-size: $ts5-size;
+
+	@include breakpoint(md) {
+		font-size: $ts5-size-desktop;
+	}
+}
+
+@mixin t6-responsive {
+	font-size: $ts6-size;
+
+	@include breakpoint(md) {
+		font-size: $ts6-size-desktop;
+	}
+}

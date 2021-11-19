@@ -1,6 +1,6 @@
 @import '../util/colors.scss';
-@import '../util/fonts.scss';
 @import '../util/brpoints.scss';
+@import '../util/spacings.scss';
 
 nav.navigation{
 	display: flex;
@@ -9,29 +9,28 @@ nav.navigation{
 	align-items: center;
 	background: $gray-90;
 	border-radius: 16px;
-	margin: 0px 8px 8px 8px;
-	padding: 8px;
+	margin: $spacer-0 $spacer-2 $spacer-2 $spacer-2;
+	padding: $spacer-2;
 
-	@include for-size(tablet-portrait-up) {
-		margin: 0px 16px 16px 16px;
+	@include breakpoint(sm) {
+		margin: $spacer-0 $spacer-3 $spacer-3 $spacer-3;
 	}
 
-	@include for-size(tablet-landscape-up) {
+	@include breakpoint(md) {
 		min-height: 550px;
-		margin: 24px 0px 24px 24px;
+		margin: $spacer-4 $spacer-0 $spacer-4 $spacer-4;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
-		padding: 12px;
+		padding: $spacer-2;
 	}
 
 	div.logo {
 		display: none;
-		margin: 0 24px 0 0;
 
-		@include for-size(tablet-landscape-up) {
-			display: block;	
-			margin: 12px 0 12px;
+		@include breakpoint(md) {
+			display: block;
+			margin: $spacer-2 $spacer-0 $spacer-0;
 		}
 	}
 
@@ -44,13 +43,13 @@ nav.navigation{
 			display: block;
 		}
 		
-		@include for-size(tablet-landscape-up) {
+		@include breakpoint(md) {
 			justify-content: center;
 			flex-direction: column;
 			flex-grow: 0;
 
 			& > a.react-link:not(:last-child) {
-				margin-bottom: 24px;
+				margin-bottom: $spacer-4;
 			}
 		}
 	}
@@ -58,7 +57,7 @@ nav.navigation{
 	div.navigation-account {
 		flex-grow: 1;
 
-		@include for-size(tablet-landscape-up) {
+		@include breakpoint(md) {
 			flex-grow: 0;
 		}
 	}

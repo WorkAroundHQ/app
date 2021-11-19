@@ -1,26 +1,28 @@
 @import '../util/colors.scss';
-@import '../util/fonts.scss';
+@import '../util/typography.scss';
 @import '../util/brpoints.scss';
+@import '../util/spacings.scss';
+@import '../util/misc-variables.scss';
 
 div.city {
 	width: 45vw;
 	display: flex;
 	flex-direction: column;
-	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+	box-shadow: $shadow;
 	border-radius: 6px;
 	transition: box-shadow .15s ease-in-out;
 	position: relative;
 
-	@include for-size(tablet-portrait-up) {
+	@include breakpoint(sm) {
 		width: 30vw;
 	}
 
-	@include for-size(tablet-landscape-up) {
+	@include breakpoint(md) {
 		width: 220px;
 	}
 
 	&:hover {
-		box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+		box-shadow: $shadow-hover;
 
 		& > div.city-like {
 			opacity: 1;
@@ -33,18 +35,18 @@ div.city {
 		align-items: center;
 		justify-content: center;
 		position: absolute;
-		top: 8px;
-		right: 8px;
+		top: $spacer-2;
+		right: $spacer-2;
 		width: 32px;
 		height: 32px;
 		background-color: $white;
 		border-radius: 16px;
-		box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+		box-shadow: $shadow;
 		transition: opacity .2s ease-out;
 		transition: box-shadow .2s ease-in-out;
 
 		&:hover {
-			box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+			box-shadow: $shadow-hover;
 		}
 
 		&.liked {
@@ -58,17 +60,18 @@ div.city {
 		}
 	}
 
-	picture, img.preview-city-image {
+	picture,
+	img.preview-city-image {
 		width: 100%;
 		height: 26vw;
 		object-fit: cover;
 		border-radius: 6px 6px 0 0;
 
-		@include for-size(tablet-portrait-up) {
+		@include breakpoint(sm) {
 			height: 18vw;
 		}
 
-		@include for-size(tablet-landscape-up) {
+		@include breakpoint(md) {
 			height: 126px;
 		}
 	}
@@ -77,22 +80,17 @@ div.city {
 		display: flex;
 		justify-content: space-between;
 		align-content: center;
-		margin: 8px 8px;
-
-		@include for-size(tablet-portrait-up) {
-			margin: 8px 12px;
-		}
+		margin: $spacer-2;
 
 		div.city-details {
 			p {
-				@include body;
+				@include t5-responsive;
 
 				&.city-country {
 					color: $gray-500;
 				}
 				
-				@include for-size(tablet-portrait-up) {
-					@include bigbody;
+				@include breakpoint(sm) {
 					white-space: nowrap;
 					max-width: 20vw;
 					overflow-x: hidden;
@@ -112,19 +110,15 @@ div.city {
 				height: 16px;
 				color: $gray-700;
 
-				@include for-size(tablet-portrait-up) {
+				@include breakpoint(sm) {
 					width: 22px;
 					height: 22px;
 				}
 			}
 
 			p {
-				@include body;
+				@include t5-responsive;
 				color: $gray-500;
-
-				@include for-size(tablet-portrait-up) {
-					@include bigbody;
-				}
 			}
 		}
 	}

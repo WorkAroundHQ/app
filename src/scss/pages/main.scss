@@ -7,7 +7,7 @@ div.main-container {
   flex-direction: column-reverse;
   overflow-x: hidden;
 
-  @include for-size(tablet-landscape-up) {
+  @include breakpoint(md) {
 		flex-direction: row
 	}
 
@@ -17,11 +17,11 @@ div.main-container {
     padding: 12px;
     height: 100vh;
 
-    @include for-size(tablet-portrait-up) {
+    @include breakpoint(sm) {
       padding: 16px;
     }
 
-    @include for-size(tablet-landscape-up) {
+    @include breakpoint(md) {
       padding-left: 44px;
       padding-bottom: 24px;
     }

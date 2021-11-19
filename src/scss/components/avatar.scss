@@ -11,11 +11,11 @@ div.profile-avatar {
 		}
 	}
 
-	div.button {
+	div.btn {
 		margin: 16px auto 0;
 
 		& > label {
-			@include button;
+			@include t4;
 		}
 
 		& > input {

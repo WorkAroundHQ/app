@@ -105,17 +105,17 @@ const Profile = ({ session }) => {
 				}}
 			/>
 			<div className='profile-form'>
-				<FormElement className='text' id='email' type='email' label='Email' value={session.user.email} disabled={true} />
-				<FormElement className='text' id='name' type='text' label='Name' value={name} handleChange={setName} disabled={!editing} />
-				<FormElement className='text' id='job' type='text' label='Job Description' value={job} handleChange={setJob} disabled={!editing} />
-				<FormElement className='text' id='twitter' type='text' label='Twitter' value={twitter} handleChange={setTwitter} disabled={!editing} />
-				<FormElement className='text' id='instagram' type='text' label='Instagram' value={instagram} handleChange={setInstagram} disabled={!editing} />
-				<FormElement className='text' id='linkedin' type='text' label='LinkedIn' value={linkedin} handleChange={setLinkedin} disabled={!editing} />
-				<FormElement className='text' id='github' type='text' label='GitHub' value={github} handleChange={setGithub} disabled={!editing} />
+				<FormElement className='input' id='email' type='email' label='Email' value={session.user.email} disabled={true} />
+				<FormElement className='input' id='name' type='text' label='Name' value={name} handleChange={setName} disabled={!editing} />
+				<FormElement className='input' id='job' type='text' label='Job Description' value={job} handleChange={setJob} disabled={!editing} />
+				<FormElement className='input' id='twitter' type='text' label='Twitter' value={twitter} handleChange={setTwitter} disabled={!editing} />
+				<FormElement className='input' id='instagram' type='text' label='Instagram' value={instagram} handleChange={setInstagram} disabled={!editing} />
+				<FormElement className='input' id='linkedin' type='text' label='LinkedIn' value={linkedin} handleChange={setLinkedin} disabled={!editing} />
+				<FormElement className='input' id='github' type='text' label='GitHub' value={github} handleChange={setGithub} disabled={!editing} />
 				<Switch className='checkbox' id='open_for_work' label='Open for work?' value={openForWork} handleChange={setOpenForWork} disabled={!editing} />
-				<FormElement className='text' id='bio' type='text' label='About me' value={bio} handleChange={setBio} disabled={!editing} />
+				<FormElement className='input' id='bio' type='text' label='About me' value={bio} handleChange={setBio} disabled={!editing} />
 			</div>
-			<Button text='Sign out' mode='attention' onClick={() => supabase.auth.signOut()} />
+			<Button text='Sign out' mode='danger' onClick={() => supabase.auth.signOut()} />
 		</section>
 	)
 }

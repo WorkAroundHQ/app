@@ -6,12 +6,12 @@ div.cities-list {
 	flex-wrap: wrap;
 	gap: 16px 8px;
 
-	@include for-size(tablet-portrait-up) {
+	@include breakpoint(sm) {
 		justify-content: flex-start;
 		gap: 20px;
 	}
 
-	@include for-size(tablet-landscape-up) {
+	@include breakpoint(md) {
 		gap: 24px;
 	}
 }

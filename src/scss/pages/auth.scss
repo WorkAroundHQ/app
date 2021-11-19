@@ -1,7 +1,8 @@
 @import '../util/colors.scss';
-@import '../util/fonts.scss';
+@import '../util/typography.scss';
 @import '../util/brpoints.scss';
 @import '../components/input.scss';
+@import '../util/spacings.scss';
 
 div.auth {
 	display: flex;
@@ -23,13 +24,13 @@ div.auth-container {
 	flex-direction: column;
 	justify-content: space-between;
 
-	@include for-size(tablet-portrait-up) {
+	@include breakpoint(sm) {
 		min-width: 420px;
 		width: 620px;
 		min-height: 522px;
 		height: 90vh;
 		max-height: 650px;
-		padding: 24px;
+		padding: $spacer-4;
 	}
 
 	div.auth-header {
@@ -39,13 +40,13 @@ div.auth-container {
 		}
 	
 		h1 {
-			@include heading1;
+			@include t0;
 			text-align: center;
 			color: $gray-700;
-			margin: 24px 0 32px;
+			margin: $spacer-4 $spacer-0 $spacer-5;
 
-			@include for-size(tablet-portrait-up) {
-				margin: 32px 0 48px;
+			@include breakpoint(sm) {
+				margin: $spacer-5 $spacer-0 $spacer-7;
 			}
 		}
 	}
@@ -57,53 +58,49 @@ div.auth-container {
 
 		div.auth-inputs {
 			min-height: 168px;
-			margin-bottom: 24px;
+			margin-bottom: $spacer-4;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
 
-			@include for-size(tablet-portrait-up) {
-				margin-bottom: 48px;
+			@include breakpoint(sm) {
+				margin-bottom: $spacer-7;
 			}
 	
-			input.auth-input {
-				@include input;
-				@include body;
+			input.input {
 				width: 70vw;
 				height: 38px;
-				padding: 8px;
 				color: $gray-500;
 
-				@include for-size(tablet-portrait-up) {
-					@include bigbody;
+				@include breakpoint(sm) {
 					width: 300px;
 					height: 40px;
-					padding: 8px;
 				}
 	
 				&:not(:last-child) {
-					margin-bottom: 24px;
+					margin-bottom: $spacer-4;
 				}
 			}
 		}
 
 		div.auth-error {
 			display: flex;
-			margin-top: 16px;
+			margin-top: $spacer-3;
 
-			@include for-size(tablet-portrait-up) {
-				margin-top: 24px;
+			@include breakpoint(sm) {
+				margin-top: $spacer-4;
 			}
 
-			ion-icon, ion-icon > div {
+			ion-icon,
+			ion-icon > div {
 				min-width: 18px;
 				min-height: 18px;
 				color: $error-500;
-				margin-right: 8px;
+				margin-right: $spacer-2;
 			}
 
 			p.auth-error-text {
-				@include body;
+				@include t5;
 				color: $error-500;
 			}
 			
@@ -118,7 +115,7 @@ div.auth-container {
 			text-align: center;
 
 			button {
-				@include body;
+				@include t5;
 				color: $primary-500;
 				text-decoration: underline;
 				cursor: pointer;

@@ -22,15 +22,15 @@ test('button is in primary colors', () => {
 	
 	const btn = screen.getByRole('button', { name: /Test/ })
   
-	expect(btn).toHaveClass('primary')
+	expect(btn).toHaveClass('btn-primary')
 })
 
 test('button is in attention colors', () => {
-  render(<Button text='Test' mode='attention' disabled={false} onClick={e => console.log(e)} />)
+  render(<Button text='Test' mode='danger' disabled={false} onClick={e => console.log(e)} />)
 	
 	const btn = screen.getByRole('button', { name: /Test/ })
   
-	expect(btn).toHaveClass('attention')
+	expect(btn).toHaveClass('btn-danger')
 })
 
 test('button is in success colors', () => {
@@ -38,7 +38,7 @@ test('button is in success colors', () => {
 	
 	const btn = screen.getByRole('button', { name: /Test/ })
   
-	expect(btn).toHaveClass('success')
+	expect(btn).toHaveClass('btn-success')
 })
 
 test('button is in default colors', () => {
@@ -46,5 +46,5 @@ test('button is in default colors', () => {
 	
 	const btn = screen.getByRole('button', { name: /Test/ })
   
-	expect(btn).toHaveClass('button')
+	expect(btn).toHaveClass('btn')
 })

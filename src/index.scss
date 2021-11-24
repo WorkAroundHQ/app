@@ -52,8 +52,12 @@ h6 {
 }
 
 p,
+a,
 li,
-a {
+span,
+label,
+input,
+button {
   @include t5;
   margin: 0;
 }

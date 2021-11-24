@@ -2,6 +2,7 @@
 
 // Type scale - mobile
 // 4—6 remain the same size on both mobile & desktop
+// However, there are responsive implementations for them.
 $ts00-size: 2.5rem; // 40px
 $ts0-size: 2rem; // 32px
 $ts1-size: 1.625rem; // 26px
@@ -23,7 +24,8 @@ $ts6-size-desktop: .875rem; // 14px
 
 $lh-condensed-ultra: 1;
 $lh-condensed: 1.25;
-$lh-default: normal;
+$lh-normal: normal;
+$lh-extended: 1.75;
 
 h1,
 h2,
@@ -33,7 +35,7 @@ h5,
 h6 {
 	font-family: Switzer, Helvetica, sans-serif;
 	font-style: normal;
-	line-height: $lh-default;
+	line-height: $lh-normal;
 }
 
 h1 {
@@ -58,7 +60,7 @@ button {
 	font-family: Satoshi, Helvetica, sans-serif;
 	font-style: normal;
 	font-weight: 500;
-	line-height: $lh-default;
+	line-height: $lh-normal;
 }
 
 @mixin t00 {

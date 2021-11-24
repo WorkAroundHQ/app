@@ -25,7 +25,7 @@ section#profile {
 			"form form . avatar ."
 			"form form . avatar ."
 			"form form . . ."
-			"signout . . . .";
+			". . . signout .";
 	}
 	
 	h1 {
@@ -58,7 +58,7 @@ section#profile {
 		justify-self: center;
 
 		@include breakpoint(md) {
-			justify-self: flex-start;
+			justify-self: flex-end;
 		}
 	}
 }

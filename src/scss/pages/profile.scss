@@ -10,6 +10,7 @@ section#profile {
   row-gap: 15px;
 	align-items: center;
 	margin: 0;
+	padding: 8px;
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: 34px 205px auto auto 35px;
 	grid-template-areas:
@@ -23,6 +24,7 @@ section#profile {
 		max-width: 600px;
 		height: fit-content;
 		margin: 0 auto;
+		padding: 0;
 		grid-template-columns: repeat(3, 1fr) 150px;
 		grid-template-rows: 53px repeat(2, auto) 75px;
 		grid-template-areas:

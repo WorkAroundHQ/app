@@ -12,10 +12,10 @@ div.main-container {
 	}
 
   main.content {
-    width: 100%;
+    width: 100vw;
+    height: calc(100vh - 70px);
     overflow-y: scroll;
-    padding: 12px;
-    height: 100vh;
+    padding: 16px;
 
     @include breakpoint(sm) {
       padding: 16px;

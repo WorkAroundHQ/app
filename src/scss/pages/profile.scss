@@ -11,13 +11,13 @@ section#profile {
 	align-items: center;
 	margin: 0;
 	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: 50px 205px auto auto 35px;
+	grid-template-rows: 34px 205px auto auto 35px;
 	grid-template-areas:
 		"heading edit"
 		"avatar avatar"
 		"form form"
 		"form form"
-		"signout signout";
+		". signout";
 
 	@include breakpoint(md) {
 		max-width: 600px;
@@ -66,10 +66,6 @@ section#profile {
 
 	button.btn.btn-danger {
 		grid-area: signout;
-		justify-self: center;
-
-		@include breakpoint(md) {
-			justify-self: flex-end;
-		}
+		justify-self: flex-end;
 	}
 }

@@ -98,7 +98,7 @@ const Profile = ({ session }) => {
 	return (
 		<section id='profile'>
 			<h2>Profile</h2>
-			<Button text={editing ? 'Save' : loading ? 'Loading' : 'Edit'} mode='primary' onClick={() => handleEditing()} />
+			<Button text={editing ? 'Save' : loading ? 'Loading' : 'Edit'} mode={editing ? 'primary' : 'default'} onClick={() => handleEditing()} />
 			<Avatar url={avatar_url} size={150} editing={editing}
 				onUpload={(url) => {
 					setAvatarUrl(url)
@@ -115,7 +115,7 @@ const Profile = ({ session }) => {
 				<Switch className='checkbox' id='open_for_work' label='Open for work?' value={openForWork} handleChange={setOpenForWork} disabled={!editing} />
 				<FormElement className='input' id='bio' type='text' label='About me' value={bio} handleChange={setBio} disabled={!editing} />
 			</div>
-			<Button text='Sign out' mode='danger' onClick={() => supabase.auth.signOut()} />
+			<Button text='Sign out' mode='danger' disabled={editing} onClick={() => supabase.auth.signOut()} />
 		</section>
 	)
 }

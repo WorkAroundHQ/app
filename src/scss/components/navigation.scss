@@ -13,17 +13,18 @@ nav.navigation{
 	margin: $spacer-0 $spacer-2 $spacer-2 $spacer-2;
 	padding: $spacer-2;
 
-	@include breakpoint(sm) {
-		margin: $spacer-0 $spacer-3 $spacer-3 $spacer-3;
-	}
-
 	@include breakpoint(md) {
+		min-width: 80px;
 		min-height: 550px;
-		margin: $spacer-4 $spacer-0 $spacer-4 $spacer-4;
+		margin: $spacer-3 $spacer-0 $spacer-3 $spacer-3;
 		flex-direction: column;
 		justify-content: space-between;
 		align-items: center;
 		padding: $spacer-2;
+	}
+
+	@include breakpoint(lg) {
+		margin: $spacer-4 $spacer-0 $spacer-4 $spacer-4;
 	}
 
 	div.logo {

@@ -1,8 +1,8 @@
 @import '../util/colors.scss';
 @import '../util/typography.scss';
 @import '../util/brpoints.scss';
-@import '../components/input.scss';
 @import '../util/spacings.scss';
+@import '../util/misc-variables.scss';
 
 div.form-element {
 	display: flex;
@@ -11,14 +11,13 @@ div.form-element {
 	padding: $spacer-0;
 	margin-bottom: $spacer-3;
 	
-	label {
+	& > label.form-element-label {
 		@include t5;
-		min-width: fit-content;
-		width: 124px;
+		min-width: 112px;
 		color: $gray-500;
 
-		&.switch {
-			width: 34px
+		@include breakpoint(md) {
+			min-width: 124px;
 		}
 	}
 	
@@ -26,7 +25,21 @@ div.form-element {
 		@include t5;
 		color: $gray-700;
 		min-width: fit-content;
-		width: 200px;
+		padding: 6px 12px;
+		background-color: $white;
+		box-shadow: $shadow;
+		border: none;
+		border-radius: 6px;
+		transition: box-shadow .2s ease-in-out;
+
+		@include breakpoint(md) {
+			width: 200px;
+		}
+
+		&:hover,
+		&:focus-visible {
+			box-shadow: $shadow-hover;
+		}
 
 		&:disabled {
 			box-shadow: none;

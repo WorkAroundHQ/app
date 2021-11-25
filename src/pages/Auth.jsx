@@ -79,17 +79,17 @@ const Auth = () => {
       <div className="auth-body">
       <div className="auth-header">
         <Logo width='42' height='40' color='#8423FF' />
-        <h1 className='auth-heading'>{signUpMode ? 'Sign up' : 'Login'}</h1>
+        <h1 className='auth-heading'>{signUpMode ? 'Sign up' : 'Sign in'}</h1>
       </div>
       <div className="auth-form">
         <div className='auth-inputs'>
-          <Input type='email' placeholder='Your email' onChange={(e) => setEmail(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
-          <Input type='password' placeholder='Password' onChange={(e) => setPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
+          <Input type='email' placeholder='Email' icon='mail' onChange={(e) => setEmail(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
+          <Input type='password' placeholder={signUpMode ? 'Password (min. 12 characters)' : 'Password'} icon='lock-closed' onChange={(e) => setPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
           {signUpMode ? 
-            <Input type='password' placeholder='Repeat Password' onChange={(e) => setRepeatedPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} /> : ''
+            <Input type='password' placeholder='Confirm password' icon='lock-closed' onChange={(e) => setRepeatedPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} /> : ''
           }
         </div>
-        <Button text={loading ? 'Loading' : signUpMode ? 'Sign Up' : 'Login'} mode='primary' disabled={loading} onClick={e => handlePrimaryButtonClick(e)} />
+        <Button text={loading ? 'Loading' : signUpMode ? 'Sign Up' : 'Sign in'} mode='primary' disabled={loading} onClick={e => handlePrimaryButtonClick(e)} />
         <div className={`auth-error${errorMessage === '' ? ' hidden' : ' visible'}`}>
           <ion-icon name="alert-circle"></ion-icon>
           <p className='auth-error-text'>{errorMessage}</p>
@@ -97,7 +97,7 @@ const Auth = () => {
       </div>
       </div>
         <div className="auth-footer">
-          <p>{signUpMode ? 'Already have an account? Login ' : 'Don\'t have an account? Sign up '}
+          <p>{signUpMode ? 'Already have an account? Sign in ' : 'Don\'t have an account? Sign up '}
             <button onClick={(e) => {
               e.preventDefault()
               setAuthMode(!signUpMode)

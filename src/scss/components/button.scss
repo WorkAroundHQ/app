@@ -7,13 +7,16 @@
 	height: fit-content;
 	width: fit-content;
 	padding: 6px 16px;
-	background-color: $white;
 	box-shadow: $shadow;
 	border-radius: 6px;
-	color: $gray-700;
 	border: none; 
 	user-select: none;
 	transition: all .2s ease-in-out;
+
+	&:disabled,
+	&[disabled] {
+		opacity: .3;
+	}
 
 	&.btn-sm {
 		@include t6-responsive;
@@ -24,18 +27,37 @@
 		padding: 10.5px 21px;
 	}
 
-	&:hover {
-		background-color: $gray-700;
-		color: $white;
-		box-shadow: $shadow-hover;
+	&.btn-default {
+		background-color: $white;
+		color: $gray-700;
+
+		&:active {
+			background-color: $gray-700;
+			color: $white;
+			box-shadow: $shadow-hover;
+		}
+
+		@include breakpoint(md) {
+			&:hover {
+				background-color: $gray-700;
+				color: $white;
+				box-shadow: $shadow-hover;
+			}
+		}
 	}
 
 	&.btn-primary {
 		background-color: $primary-500;
 		color: $white;
-
-		&:hover {
+		
+		&:active {
 			background-color: $primary-700;
+		}
+
+		@include breakpoint(md) {
+			&:hover {
+				background-color: $primary-700;
+			}
 		}
 	}
 
@@ -43,27 +65,43 @@
 		background-color: $white;
 		color: $error-500;
 
-		&:hover {
+		&:active {
 			background-color: $error-500;
 			color: $white;
+		}
+
+		@include breakpoint(md) {
+			&:hover {
+				background-color: $error-500;
+				color: $white;
+			}
 		}
 	}
 
 	&.btn-success {
 		background-color: $white;
 		color: $success-500;
-
-		&:hover {
+		
+		&:active {
 			background-color: $success-500;
 			color: $white;
 		}
+
+		@include breakpoint(md) {
+			&:hover {
+				background-color: $success-500;
+				color: $white;
+			}
+		}
 	}
 
-	&:active {
-		filter: brightness(.7);
-	}
-
-	&:focus-visible {
-		box-shadow: $shadow-hover;
+	@include breakpoint(md) {
+		&:active {
+			filter: brightness(.7);
+		}
+	
+		&:focus-visible {
+			box-shadow: $shadow-hover;
+		}
 	}
 }

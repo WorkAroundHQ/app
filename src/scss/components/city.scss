@@ -18,6 +18,10 @@ div.city {
 	}
 
 	@include breakpoint(md) {
+		width: 24.3vw;
+	}
+
+	@include breakpoint(lg) {
 		width: 220px;
 	}
 
@@ -68,10 +72,14 @@ div.city {
 		border-radius: 6px 6px 0 0;
 
 		@include breakpoint(sm) {
-			height: 18vw;
+			height: 17.5vw;
 		}
 
 		@include breakpoint(md) {
+			height: 14vw;
+		}
+
+		@include breakpoint(lg) {
 			height: 126px;
 		}
 	}
@@ -85,16 +93,20 @@ div.city {
 		div.city-details {
 			p {
 				@include t5-responsive;
+				white-space: nowrap;
+				max-width: 31vw;
+				overflow-x: hidden;
+				text-overflow: ellipsis;
 
-				&.city-country {
-					color: $gray-500;
-				}
-				
 				@include breakpoint(sm) {
 					white-space: nowrap;
 					max-width: 20vw;
 					overflow-x: hidden;
 					text-overflow: ellipsis;
+				}
+
+				&.city-country {
+					color: $gray-500;
 				}
 			}
 		}

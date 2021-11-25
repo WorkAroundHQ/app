@@ -5,32 +5,37 @@
 @import '../util/spacings.scss';
 
 div.auth {
+	min-width: 220px;
+	width: 100vw;
+	min-height: 500px;
+	height: 100vh;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	min-height: 580px;
-	width: 100vw;
-	height: 100vh;
 }
 
 div.auth-container {
-	width: 90vw;
-	min-height: 460px;
-	height: 90vh;
-	background-color: #F8F8F8;
-	border-radius: 16px;
-	padding: 12px;
+	min-width: 200px;
+	width: calc(100vw - 32px);
+	max-width: 620px;
+	min-height: 400px;
+	height: calc(100vh - 32px);
+	max-height: 600px;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	background-color: $gray-90;
+	border-radius: 16px;
+	padding: $spacer-3 $spacer-3 $spacer-2;
 
-	@include breakpoint(sm) {
+	@include breakpoint(md) {
 		min-width: 420px;
 		width: 620px;
 		min-height: 522px;
 		height: 90vh;
 		max-height: 650px;
 		padding: $spacer-4;
+		margin: $spacer-3;
 	}
 
 	div.auth-header {
@@ -40,13 +45,11 @@ div.auth-container {
 		}
 	
 		h1 {
-			@include t0;
 			text-align: center;
-			color: $gray-700;
-			margin: $spacer-4 $spacer-0 $spacer-5;
+			margin: $spacer-3 $spacer-0 $spacer-3;
 
-			@include breakpoint(sm) {
-				margin: $spacer-5 $spacer-0 $spacer-7;
+			@include breakpoint(md) {
+				margin: $spacer-5 $spacer-0 $spacer-6;
 			}
 		}
 	}
@@ -57,28 +60,40 @@ div.auth-container {
 		align-items: center;
 
 		div.auth-inputs {
-			min-height: 168px;
-			margin-bottom: $spacer-4;
+			width: 100%;
+			min-height: 152px;
 			display: flex;
 			flex-direction: column;
 			align-items: center;
+			margin-bottom: $spacer-3;
 
-			@include breakpoint(sm) {
-				margin-bottom: $spacer-7;
+			@include breakpoint(md) {
+				min-height: 168px;
+				margin-bottom: $spacer-4;
 			}
 	
-			input.input {
-				width: 70vw;
-				height: 38px;
+			div.input {
+				width: 100%;
+				max-width: 300px;
+				height: 40px;
 				color: $gray-500;
 
-				@include breakpoint(sm) {
+				@include breakpoint(md) {
 					width: 300px;
 					height: 40px;
 				}
+
+				& > input {
+					@include t5-responsive;
+					width: 100%;
+				}
 	
 				&:not(:last-child) {
-					margin-bottom: $spacer-4;
+					margin-bottom: $spacer-3;
+
+					@include breakpoint(md) {
+						margin-bottom: $spacer-4;
+					}
 				}
 			}
 		}
@@ -87,7 +102,7 @@ div.auth-container {
 			display: flex;
 			margin-top: $spacer-3;
 
-			@include breakpoint(sm) {
+			@include breakpoint(md) {
 				margin-top: $spacer-4;
 			}
 
@@ -119,7 +134,7 @@ div.auth-container {
 				color: $primary-500;
 				text-decoration: underline;
 				cursor: pointer;
-				padding: 0 0 0 2px;
+				padding: 0 0 0 1px;
 				background-color: transparent;
 				border: none;
 				transition: color .2s ease-in-out;

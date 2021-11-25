@@ -130,7 +130,7 @@ const Cities = () => {
 
 	return (
 		<section id='cities'>
-			<h1>Cities</h1>
+			<h2>Cities</h2>
 			<div className='cities-list'>
 				{cities.map((city) => (
 					<City key={city.name} city={city} onToggle={toggleLike} />

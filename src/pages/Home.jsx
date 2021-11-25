@@ -1,7 +1,9 @@
+import '../scss/pages/home.scss'
+
 const Home = () => {
 	return (
 		<section id='home'>
-			<h1>Home</h1>
+			<h2>Home</h2>
 		</section>
 	)
 }

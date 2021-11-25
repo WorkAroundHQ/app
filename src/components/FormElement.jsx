@@ -3,7 +3,7 @@ import '../scss/components/form-element.scss'
 const FormElement = ({ className, id, type, label, value, handleChange, disabled }) => {
 	return (
 		<div className='form-element'>
-			<label htmlFor={id}>{label}</label>
+			<label className="form-element-label" htmlFor={id}>{label}</label>
         <input
 					className={className}
           id={id}

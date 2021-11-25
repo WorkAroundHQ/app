@@ -1,22 +1,37 @@
 @import '../util/misc-variables.scss';
 @import '../util/colors.scss';
+@import '../util/spacings.scss';
 
-.input {
-	@include t4;
+div.input {
+	display: flex;
+	min-height: 40px;
+	min-width: 180px;
+	align-items: center;
 	padding: 6px 12px;
 	background-color: $white;
 	box-shadow: $shadow;
 	border-radius: 6px;
-	border: none;
 	transition: box-shadow .2s ease-in-out;
-
-	&.input-sm {
-		@include t6-responsive;
-		padding: 3px 12px;
-	}
 
 	&:hover,
 	&:focus-visible {
 		box-shadow: $shadow-hover;
+	}
+
+	ion-icon {
+		width: 24px;
+		height: 24px;
+		color: $gray-500;
+		margin-right: $spacer-2;
+	}
+
+	.input-input {
+		border: none;
+		color: $gray-700;
+
+		&.input-sm {
+			@include t6-responsive;
+			padding: 3px 12px;
+		}
 	}
 }

@@ -3,7 +3,7 @@ import '../scss/components/switch.scss'
 const Switch = ({ className, id, label, value, handleChange, disabled }) => {
 	return (
 		<div className='form-element'>
-			<label htmlFor={id}>{label}</label>
+			<label className="form-element-label" htmlFor={id}>{label}</label>
 			<label className="switch" htmlFor={id}>
 				<input
 					className={className}

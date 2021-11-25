@@ -22,8 +22,7 @@ div.main-container {
     }
 
     @include breakpoint(md) {
-      padding-left: 44px;
-      padding-bottom: 24px;
+      padding: 32px 24px 24px 40px;
     }
   }
 }

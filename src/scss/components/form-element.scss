@@ -11,15 +11,10 @@ div.form-element {
 	padding: $spacer-0;
 	margin-bottom: $spacer-3;
 	
-	label {
+	& > label.form-element-label {
 		@include t5;
-		min-width: fit-content;
-		width: 124px;
+		min-width: 124px;
 		color: $gray-500;
-
-		&.switch {
-			width: 34px
-		}
 	}
 	
 	input.input {

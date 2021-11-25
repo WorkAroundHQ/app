@@ -1,7 +1,9 @@
+import '../scss/pages/articles.scss'
+
 const Articles = () => {
 	return (
 		<section id='articles'>
-			<h1>Articles</h1>
+			<h2>Articles</h2>
 		</section>
 	)
 }

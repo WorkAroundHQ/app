@@ -15,13 +15,14 @@ div.main-container {
     width: 100vw;
     height: calc(100vh - 70px);
     overflow-y: scroll;
-    padding: 16px;
+    padding: 8px;
 
     @include breakpoint(sm) {
       padding: 16px;
     }
 
     @include breakpoint(md) {
+      height: 100vh;
       padding: 32px 24px 24px 40px;
     }
   }

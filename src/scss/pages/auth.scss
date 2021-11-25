@@ -73,7 +73,6 @@ div.auth-container {
 			}
 	
 			div.input {
-				@include t5-responsive;
 				width: 100%;
 				max-width: 300px;
 				height: 40px;
@@ -85,6 +84,7 @@ div.auth-container {
 				}
 
 				& > input {
+					@include t5-responsive;
 					width: 100%;
 				}
 	

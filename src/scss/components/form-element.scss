@@ -1,8 +1,8 @@
 @import '../util/colors.scss';
 @import '../util/typography.scss';
 @import '../util/brpoints.scss';
-@import '../components/input.scss';
 @import '../util/spacings.scss';
+@import '../util/misc-variables.scss';
 
 div.form-element {
 	display: flex;
@@ -25,9 +25,20 @@ div.form-element {
 		@include t5;
 		color: $gray-700;
 		min-width: fit-content;
+		padding: 6px 12px;
+		background-color: $white;
+		box-shadow: $shadow;
+		border: none;
+		border-radius: 6px;
+		transition: box-shadow .2s ease-in-out;
 
 		@include breakpoint(md) {
 			width: 200px;
+		}
+
+		&:hover,
+		&:focus-visible {
+			box-shadow: $shadow-hover;
 		}
 
 		&:disabled {

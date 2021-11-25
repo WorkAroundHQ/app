@@ -1,6 +1,9 @@
-const Input = ({ type, placeholder, onChange, onEnter }) => {
+const Input = ({ type, placeholder, onChange, onEnter, icon }) => {
 	return (
-		<input className='input' type={type} placeholder={placeholder} onChange={onChange} onKeyPress={onEnter} />
+		<div className="input">
+			{icon ? <ion-icon name={icon}></ion-icon> : null}
+			<input className='input-input' type={type} placeholder={placeholder} onChange={onChange} onKeyPress={onEnter} />
+		</div>
 	)
 }
 

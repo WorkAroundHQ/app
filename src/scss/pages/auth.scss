@@ -5,9 +5,9 @@
 @import '../util/spacings.scss';
 
 div.auth {
-	// display: block;
-	min-height: 500px;
+	min-width: 220px;
 	width: 100vw;
+	min-height: 500px;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
@@ -15,6 +15,7 @@ div.auth {
 }
 
 div.auth-container {
+	min-width: 200px;
 	width: calc(100vw - 32px);
 	max-width: 620px;
 	min-height: 400px;
@@ -71,7 +72,7 @@ div.auth-container {
 				margin-bottom: $spacer-4;
 			}
 	
-			input.input {
+			div.input {
 				@include t5-responsive;
 				width: 100%;
 				max-width: 300px;
@@ -81,6 +82,10 @@ div.auth-container {
 				@include breakpoint(md) {
 					width: 300px;
 					height: 40px;
+				}
+
+				& > input {
+					width: 100%;
 				}
 	
 				&:not(:last-child) {

@@ -83,10 +83,10 @@ const Auth = () => {
       </div>
       <div className="auth-form">
         <div className='auth-inputs'>
-          <Input type='email' placeholder='Email' onChange={(e) => setEmail(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
-          <Input type='password' placeholder={signUpMode ? 'Password (min. 12 characters)' : 'Password'} onChange={(e) => setPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
+          <Input type='email' placeholder='Email' icon='mail' onChange={(e) => setEmail(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
+          <Input type='password' placeholder={signUpMode ? 'Password (min. 12 characters)' : 'Password'} icon='lock-closed' onChange={(e) => setPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} />
           {signUpMode ? 
-            <Input type='password' placeholder='Confirm password' onChange={(e) => setRepeatedPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} /> : ''
+            <Input type='password' placeholder='Confirm password' icon='lock-closed' onChange={(e) => setRepeatedPassword(e.target.value)} onEnter={(e) => handleEnterPress(e)} /> : ''
           }
         </div>
         <Button text={loading ? 'Loading' : signUpMode ? 'Sign Up' : 'Sign in'} mode='primary' disabled={loading} onClick={e => handlePrimaryButtonClick(e)} />

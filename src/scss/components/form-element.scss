@@ -13,15 +13,22 @@ div.form-element {
 	
 	& > label.form-element-label {
 		@include t5;
-		min-width: 124px;
+		min-width: 112px;
 		color: $gray-500;
+
+		@include breakpoint(md) {
+			min-width: 124px;
+		}
 	}
 	
 	input.input {
 		@include t5;
 		color: $gray-700;
 		min-width: fit-content;
-		width: 200px;
+
+		@include breakpoint(md) {
+			width: 200px;
+		}
 
 		&:disabled {
 			box-shadow: none;
